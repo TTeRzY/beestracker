@@ -32,7 +32,10 @@ export default function DesktopHeader ({handleMobileMenuOpen}) {
                 </Link>
             </Popover.Group>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-500">
+                <Link to="/register" className="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-500 px-3">
+                    Register
+                </Link>
+                <Link to="/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-amber-500 px-3">
                     Log in <span aria-hidden="true">&rarr;</span>
                 </Link>
             </div>

@@ -8,10 +8,12 @@ import {
 } from 'react-router-dom'
 
 
-import ErrorPage from './pages/error-page.jsx'
-import HomePage from './pages/home-page.jsx'
-import LoginPage from './pages/login-page.jsx'
+import ErrorPage from './pages/error.jsx'
+import Home from './pages/home.jsx'
+import Login from './pages/login.jsx'
 import RootLayout from './pages/root.jsx'
+import Register from "./pages/register";
+import ForgotPassword from "./pages/forgot-password";
 
 const router = createBrowserRouter([
     {
@@ -19,8 +21,10 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <HomePage /> },
-            { name: 'login', path: 'login', element: <LoginPage /> }
+            { index: true, element: <Home /> },
+            { path: 'login', element: <Login /> },
+            { path: 'register', element: <Register /> },
+            { path: 'forgot-password', element: <ForgotPassword /> },
         ]
     }
 ])
