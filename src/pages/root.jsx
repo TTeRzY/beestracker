@@ -3,15 +3,14 @@ import Header from "../components/header.jsx";
 import Footer from "../components/footer";
 
 export default function RootLayout() {
-    const location = useLocation();
+    const location = useLocation()
     const currentPath = location.pathname
-    const renderHeader = currentPath !== '/login' && currentPath !== '/register' && currentPath !== '/forgot-password';
-    const renderFooter = currentPath !== '/login' && currentPath !== '/register' && currentPath !== '/forgot-password';
+    const noHeaderAndFooterPaths = ['/login', '/register', '/forgot-password' ,'/admin']
     return (
         <div className="bg-gray-100">
-            {renderHeader && <Header />}
+            {!noHeaderAndFooterPaths.includes(currentPath) && <Header />}
             <Outlet />
-            {renderFooter && <Footer />}
+            {!noHeaderAndFooterPaths.includes(currentPath) && <Footer />}
         </div>
     );
 }

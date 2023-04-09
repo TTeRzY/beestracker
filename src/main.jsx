@@ -14,6 +14,7 @@ import Login from './pages/login.jsx'
 import RootLayout from './pages/root.jsx'
 import Register from "./pages/register";
 import ForgotPassword from "./pages/forgot-password";
+import Admin from "./pages/admin";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             { path: 'login', element: <Login /> },
             { path: 'register', element: <Register /> },
             { path: 'forgot-password', element: <ForgotPassword /> },
+            { path: 'admin', element: <Admin /> },
         ]
     }
 ])
