@@ -2,9 +2,9 @@ import {Dialog} from "@headlessui/react";
 import {XMarkIcon} from "@heroicons/react/24/outline/index.js";
 import {Link} from "react-router-dom";
 
-export default function MobileHeader() {
+export default function MobileHeader({mobileMenuOpen, handleMobileMenuOpen}) {
     return (
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={() => handleMobileMenuOpen(false)}>
             <div className="fixed inset-0 z-10" />
             <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
@@ -14,7 +14,7 @@ export default function MobileHeader() {
                     <button
                         type="button"
                         className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => handleMobileMenuOpen(false)}
                     >
                         <span className="sr-only">Close menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true" />
