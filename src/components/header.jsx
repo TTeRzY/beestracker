@@ -11,7 +11,7 @@ export default function Header() {
 
 
     return (
-        <header className="bg-white">
+        <header className="bg-white shadow-lg">
             <DesktopHeader handleMobileMenuOpen={handleMobileMenuOpen} mobileMenuOpen={mobileMenuOpen} />
             <MobileHeader mobileMenuOpen={mobileMenuOpen} handleMobileMenuOpen={handleMobileMenuOpen} />
         </header>
