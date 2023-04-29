@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 export default function LoginForm() {
 	return(
-		<form className="space-y-4 md:space-y-6" action="#">
+		<form className="space-y-4 md:space-y-6" action="/admin">
 			<div>
 				<label htmlFor="email"
 				       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

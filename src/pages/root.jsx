@@ -7,7 +7,7 @@ export default function RootLayout() {
     const currentPath = location.pathname
     const noHeaderAndFooterPaths = ['/login', '/register', '/forgot-password' ,'/admin']
     return (
-        <div className="bg-gray-100">
+        <div>
             {!noHeaderAndFooterPaths.includes(currentPath) && <Header />}
             <Outlet />
             {!noHeaderAndFooterPaths.includes(currentPath) && <Footer />}

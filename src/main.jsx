@@ -14,7 +14,8 @@ import Login from './pages/login.jsx'
 import RootLayout from './pages/root.jsx'
 import Register from "./pages/register";
 import ForgotPassword from "./pages/forgot-password";
-import Admin from "./pages/admin";
+import Dashboard from './pages/admin/dashboard'
+import AdminLayout from './pages/admin-layout'
 
 const router = createBrowserRouter([
     {
@@ -26,9 +27,18 @@ const router = createBrowserRouter([
             { path: 'login', element: <Login /> },
             { path: 'register', element: <Register /> },
             { path: 'forgot-password', element: <ForgotPassword /> },
-            { path: 'admin', element: <Admin /> },
         ]
-    }
+    },
+    {
+      path: '/admin',
+      element: <AdminLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+          { index: true, element: <Dashboard /> },
+          // { path: 'apiaries', element: <Apiaries /> },
+          // { path: 'beehives', element: <BeeHives /> },
+      ]
+  }
 ])
 
 
