@@ -16,6 +16,9 @@ import Register from "./pages/register";
 import ForgotPassword from "./pages/forgot-password";
 import Dashboard from './pages/admin/dashboard'
 import AdminLayout from './pages/admin-layout'
+import About from './pages/about'
+import Apiaries from './pages/admin/apiaries'
+import BeeHives from './pages/admin/beehives'
 
 const router = createBrowserRouter([
     {
@@ -27,6 +30,7 @@ const router = createBrowserRouter([
             { path: 'login', element: <Login /> },
             { path: 'register', element: <Register /> },
             { path: 'forgot-password', element: <ForgotPassword /> },
+            { path: 'about', element: <About /> },
         ]
     },
     {
@@ -35,8 +39,8 @@ const router = createBrowserRouter([
       errorElement: <ErrorPage />,
       children: [
           { index: true, element: <Dashboard /> },
-          // { path: 'apiaries', element: <Apiaries /> },
-          // { path: 'beehives', element: <BeeHives /> },
+          { path: 'apiaries', element: <Apiaries /> },
+          { path: 'beehives', element: <BeeHives /> },
       ]
   }
 ])

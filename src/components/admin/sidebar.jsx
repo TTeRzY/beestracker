@@ -15,6 +15,7 @@ const sideBarMenu = [
         <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
       </svg>
     ),
+    url: '/admin',
   },
   {
     key: "apiaries",
@@ -35,6 +36,7 @@ const sideBarMenu = [
         />
       </svg>
     ),
+    url: '/admin/apiaries',
     submenu: [
       { key: "all-apiaries", url: "/apiaries", title: "Всички пчелини" },
       { key: "add-apiary", url: "/apiaries/add", title: "Добави пчелин" },
@@ -59,6 +61,7 @@ const sideBarMenu = [
         />
       </svg>
     ),
+    url: '/admin/beehives',
     submenu: [
       { key: "all-beehives", url: "/beehives", title: "Всички кошери" },
       { key: "add-beehive", url: "/beehives/add", title: "Добави кошер" },
