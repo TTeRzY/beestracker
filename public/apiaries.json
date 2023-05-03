@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "apiary_id": "1",
+      "name": "Пчелин Кричим",
+      "beehives": "6",
+      "type": "Основен",
+      "address": "гр. Кричим"
+    },
+    {
+      "apiary_id": "2",
+      "name": "Пчелин Пловдив 1",
+      "beehives": "10",
+      "type": "Втори пчелин",
+      "address": "гр. Пловдив"
+    }
+  ]
+}
