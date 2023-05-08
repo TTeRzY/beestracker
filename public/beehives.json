@@ -2,18 +2,48 @@
   "status": "success",
   "data": [
     {
+      "date": "22-05-2022",
+      "beehive_id": "1",
       "apiary_id": "1",
-      "name": "Пчелин Кричим",
-      "beehives": "6",
-      "type": "Основен",
-      "адрес": "гр. Кричим"
+      "apiary_place": "Първа редица",
+      "type": "Дадан-блат",
+      "family_type": "Пчелно семейство",
+      "bee_queen": "22-05-2022"
     },
     {
-      "apiary_id": "2",
-      "name": "Пчелин Пловдив 1",
-      "beehives": "10",
-      "type": "Втори пчелин",
-      "адрес": "гр. Пловдив"
+      "date": "22-05-2022",
+      "beehive_id": "2",
+      "apiary_id": "1",
+      "apiary_place": "Първа редица",
+      "type": "Дадан-блат",
+      "family_type": "Пчелно семейство",
+      "bee_queen": "22-05-2022"
+    },
+    {
+      "date": "08-05-2023",
+      "beehive_id": "3",
+      "apiary_id": "1",
+      "apiary_place": "Първа редица",
+      "type": "Дадан-блат",
+      "family_type": "Отводка",
+      "bee_queen": "08-05-2023"
+    },
+    {
+      "date": "25-05-2022",
+      "beehive_id": "4",
+      "apiary_id": "1",
+      "apiary_place": "Първа редица",
+      "type": "Дадан-блат",
+      "family_type": "Рояк",
+      "bee_queen": "25-05-2022"
+    },
+    {
+      "date": "22-05-2022",
+      "beehive_id": "5",
+      "apiary_id": "1",
+      "apiary_place": "Първа редица",
+      "type": "Дадан-блат",
+      "family_type": "Кошер"
     }
   ]
 }

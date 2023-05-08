@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const sideBarMenu = [
@@ -15,7 +16,7 @@ const sideBarMenu = [
         <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
       </svg>
     ),
-    url: '/admin',
+    url: "/admin",
   },
   {
     key: "apiaries",
@@ -36,10 +37,10 @@ const sideBarMenu = [
         />
       </svg>
     ),
-    url: '/admin/apiaries',
+    url: "/admin/apiaries",
     submenu: [
-      { key: "all-apiaries", url: "/apiaries", title: "Всички пчелини" },
-      { key: "add-apiary", url: "/apiaries/add", title: "Добави пчелин" },
+      { key: "all-apiaries", url: "/admin/apiaries", title: "Всички пчелини" },
+      { key: "add-apiary", url: "/admin/apiaries/add", title: "Добави пчелин" },
     ],
   },
   {
@@ -61,15 +62,25 @@ const sideBarMenu = [
         />
       </svg>
     ),
-    url: '/admin/beehives',
+    url: "/admin/beehives",
     submenu: [
-      { key: "all-beehives", url: "/beehives", title: "Всички кошери" },
-      { key: "add-beehive", url: "/beehives/add", title: "Добави кошер" },
+      { key: "all-beehives", url: "/admin/beehives", title: "Всички кошери" },
+      { key: "add-beehive", url: "/admin/beehives/add", title: "Добави кошер" },
     ],
   },
 ];
 
 export default function Sidebar() {
+  let [isDropDownHidden, setIsDropDownHidden] = useState(true);
+
+  function toggleDropDown(event) {
+    if(event.currentTarget.nextSibling.classList.contains('hidden')) {
+      event.currentTarget.nextSibling.classList.remove(('hidden'))
+      return
+    }
+    event.currentTarget.nextSibling.classList.add(('hidden'))
+  }
+
   return (
     <aside
       id="logo-sidebar"
@@ -133,6 +144,7 @@ export default function Sidebar() {
                       className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
                       aria-controls="dropdown-layouts"
                       data-collapse-toggle="dropdown-layouts"
+                      onClick={toggleDropDown}
                     >
                       {item.icon}
                       <span
@@ -155,7 +167,7 @@ export default function Sidebar() {
                         ></path>
                       </svg>
                     </button>
-                    <ul id="dropdown-layouts" className="hidden py-2 space-y-2">
+                    <ul id="dropdown-layouts" className={`py-2 space-y-2 ${isDropDownHidden ? 'hidden' : ''}`}>
                       {item.submenu.map((subitem) => {
                         return (
                           <li key={subitem.key}>

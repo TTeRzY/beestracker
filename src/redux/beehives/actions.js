@@ -15,7 +15,7 @@ export function setBeeHives(value) {
 export function getBeeHives() {
     return async (dispatch) => {
         try {
-            axios.get('/api/getBeeHives')
+            axios.get('../beehives.json')
                 .then(response => response.data)
                 .then(response => {
                     dispatch(setBeeHives(response?.data ?? []))
