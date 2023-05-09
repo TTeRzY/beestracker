@@ -1,4 +1,15 @@
-export default function FormInput({label, htmlFor, type, name, id, placeholder = "", required = ""}) {
+import { Field } from "formik";
+
+export default function FormInput({
+  label,
+  htmlFor,
+  type,
+  name,
+  id,
+  placeholder = "",
+  required = "",
+  error = ""
+}) {
   return (
     <div>
       <label
@@ -7,7 +18,7 @@ export default function FormInput({label, htmlFor, type, name, id, placeholder =
       >
         {label}
       </label>
-      <input
+      <Field
         type={type}
         name={name}
         id={id}
@@ -15,6 +26,7 @@ export default function FormInput({label, htmlFor, type, name, id, placeholder =
         placeholder={placeholder}
         required={required}
       />
+      {error && <div className="mt-2 text-pink-600 text-sm">{error}</div>}
     </div>
   );
 }
