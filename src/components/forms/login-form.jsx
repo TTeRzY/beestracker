@@ -41,7 +41,7 @@ export default function LoginForm() {
             name={"email"}
             id={"email"}
             placeholder="name@company.com"
-            error={errors.email && touched.email ? errors.email : ""}
+            error={errors.email && touched.email && errors.email}
           />
           <FormInput
             htmlFor={"password"}
@@ -50,7 +50,7 @@ export default function LoginForm() {
             name={"password"}
             id={"password"}
             placeholder="••••••••"
-            error={errors.password && touched.password ? errors.password : ""}
+            error={errors.password && touched.password && errors.password}
           />
           {/* <div className="flex items-center justify-between">
             <Link

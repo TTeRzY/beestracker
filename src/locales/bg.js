@@ -1,6 +1,10 @@
 const bg = {
     translation: {
       loginPage: {
+        username: "Потребителско име",
+        usernameValidation: "Потребителското име трябва да е минимум 3 символа",
+        name: "Имена",
+        nameValidation: "Името трябва да е минимум 3 символа",
         email: "Имейл",
         emailValidation: "Моля въведете валиден имейл",
         password: "Парола",

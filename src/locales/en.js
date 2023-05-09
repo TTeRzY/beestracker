@@ -1,6 +1,10 @@
 const en = {
     translation: {
       loginPage: {
+        username: "Username",
+        usernameValidation: "Your username should be atleast 3 characters",
+        name: "Name",
+        nameValidation: "Your name should be atleast 3 characters",
         email: "Email",
         emailValidation: "Please enter a valid email",
         password: "Password",
