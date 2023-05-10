@@ -1,3 +1,4 @@
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import FormCheckBox from "../../components/forms/form-checkbox";
 
 export default function ApiaryItem({ apiary_id, name, beehives, type, address }) {
@@ -16,12 +17,18 @@ export default function ApiaryItem({ apiary_id, name, beehives, type, address })
       <td className="px-6 py-4">{beehives}</td>
       <td className="px-6 py-4">{type}</td>
       <td className="px-6 py-4">{address}</td>
-      <td className="px-6 py-4">
+      <td className="px-6 py-4 flex items-center">
         <a
           href="#"
-          className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
-          Edit
+          <PencilIcon className="w-6 h-6" />
+        </a>
+        <a
+          href="#"
+          className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
+        >
+          <TrashIcon className="w-6 h-6" stroke="red" />
         </a>
       </td>
     </tr>

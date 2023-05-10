@@ -8,7 +8,7 @@ import FormSearchInput from "../../components/forms/form-search-input"
 export default function BeeHives() {
   const dispatch = useDispatch()
   const beehives = useSelector((state) => state.beehives)
-  const beeHivesTableHeadInfo = ['Дата', 'Кошер №', 'Пчелин №', 'Място в пчелина', 'Вид', 'Семейство', 'Майка']
+  const beeHivesTableHeadInfo = ['Дата', 'Кошер №', 'Пчелин №', 'Място в пчелина', 'Вид', 'Семейство', 'Майка', 'Опции']
 
   useEffect(() => {
     dispatch(getBeeHives())

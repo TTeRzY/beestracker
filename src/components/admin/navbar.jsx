@@ -28,12 +28,7 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-            <Link to="/admin" className="flex ml-2 md:mr-24">
-              <img
-                src="https://flowbite-admin-dashboard.vercel.app/images/logo.svg"
-                className="h-8 mr-3"
-                alt="FlowBite Logo"
-              />
+            <Link to="/" className="flex ml-2 md:mr-24">
               <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white px-3">
                 BeesTracker
               </span>
@@ -77,11 +72,6 @@ export default function Navbar() {
                   data-dropdown-toggle="dropdown-user"
                 >
                   <span className="sr-only">Open user menu</span>
-                  <img
-                    className="w-8 h-8 rounded-full"
-                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                    alt="user photo"
-                  />
                 </button>
               </div>
               <div
@@ -111,13 +101,13 @@ export default function Navbar() {
                 </div>
                 <ul className="py-1" role="none">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
                       Dashboard
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
@@ -126,15 +116,6 @@ export default function Navbar() {
                       role="menuitem"
                     >
                       Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                      role="menuitem"
-                    >
-                      Earnings
                     </a>
                   </li>
                   <li>

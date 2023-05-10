@@ -22,24 +22,26 @@ import Apiaries from './pages/admin/apiaries'
 import BeeHives from './pages/admin/beehives'
 
 const router = createBrowserRouter([
+    // {
+    //     path: '/',
+    //     element: <RootLayout />,
+    //     errorElement: <ErrorPage />,
+    //     children: [
+    //         { index: true, element: <Home /> },
+    //         { path: 'login', element: <Login /> },
+    //         { path: 'register', element: <Register /> },
+    //         { path: 'forgot-password', element: <ForgotPassword /> },
+    //         { path: 'about', element: <About /> },
+    //     ]
+    // },
     {
-        path: '/',
-        element: <RootLayout />,
-        errorElement: <ErrorPage />,
-        children: [
-            { index: true, element: <Home /> },
-            { path: 'login', element: <Login /> },
-            { path: 'register', element: <Register /> },
-            { path: 'forgot-password', element: <ForgotPassword /> },
-            { path: 'about', element: <About /> },
-        ]
-    },
-    {
-      path: '/admin',
+      path: '/',
       element: <AdminLayout />,
       errorElement: <ErrorPage />,
       children: [
           { index: true, element: <Dashboard /> },
+          { path: 'login', element: <Login /> },
+          { path: 'register', element: <Register /> },
           { path: 'apiaries', element: <Apiaries /> },
           { path: 'beehives', element: <BeeHives /> },
       ]

@@ -1,3 +1,4 @@
+import { ArchiveBoxIcon, ChartPieIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,66 +7,32 @@ const sideBarMenu = [
     key: "dashboard",
     title: "Табло",
     icon: (
-      <svg
-        className="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-      </svg>
+      <ChartPieIcon className="w-6 h-6" />
     ),
-    url: "/admin",
+    url: "/",
   },
   {
     key: "apiaries",
     title: "Пчелини",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-        />
-      </svg>
+      <Squares2X2Icon className="w-6 h-6" />
     ),
-    url: "/admin/apiaries",
+    url: "/apiaries",
     submenu: [
-      { key: "all-apiaries", url: "/admin/apiaries", title: "Всички пчелини" },
-      { key: "add-apiary", url: "/admin/apiaries/add", title: "Добави пчелин" },
+      { key: "all-apiaries", url: "/apiaries", title: "Всички пчелини" },
+      { key: "add-apiary", url: "/apiaries/add", title: "Добави пчелин" },
     ],
   },
   {
     key: "beehives",
     title: "Кошери",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
-        />
-      </svg>
+      <ArchiveBoxIcon className="w-6 h-6" />
     ),
-    url: "/admin/beehives",
+    url: "/beehives",
     submenu: [
-      { key: "all-beehives", url: "/admin/beehives", title: "Всички кошери" },
-      { key: "add-beehive", url: "/admin/beehives/add", title: "Добави кошер" },
+      { key: "all-beehives", url: "/beehives", title: "Всички кошери" },
+      { key: "add-beehive", url: "/beehives/add", title: "Добави кошер" },
     ],
   },
 ];
