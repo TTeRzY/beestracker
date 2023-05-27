@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getApiaries } from "../../redux/apiaries/actions";
-import ApiaryItem from "./apiary-item";
-import TableHead from "../../components/tables/table-head";
-import FormSearchInput from "../../components/forms/form-search-input";
+import { getApiaries } from "../../../redux/apiaries/actions";
+import ApiaryItem from "./apiary-list-item";
+import TableHead from "../../../components/tables/table-head";
+import FormSearchInput from "../../../components/forms/form-search-input";
 
 export default function Apiaries() {
   const dispatch = useDispatch()
@@ -28,6 +28,7 @@ export default function Apiaries() {
                 return (
                   <ApiaryItem
                     key={apiary.apiary_id}
+                    id={apiary.id}
                     apiary_id={apiary.apiary_id}
                     name={apiary.name}
                     beehives={apiary.beehives}

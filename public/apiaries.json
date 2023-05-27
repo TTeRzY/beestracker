@@ -2,6 +2,7 @@
   "status": "success",
   "data": [
     {
+      "id": "211254151",
       "apiary_id": "1",
       "name": "Пчелин Кричим",
       "beehives": "6",
@@ -9,6 +10,7 @@
       "address": "гр. Кричим"
     },
     {
+      "id": "211254152",
       "apiary_id": "2",
       "name": "Пчелин Пловдив 1",
       "beehives": "10",

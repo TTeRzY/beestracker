@@ -33,18 +33,21 @@ export default function Dashboard() {
             counter={apiaries.length}
             title={"Добавени пчелини"}
             className="flex justify-between bg-sky-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
+            href={"/apiaries"}
           />
           <Panel
             icon={<ArchiveBoxIcon className="w-8 h-8" />}
             counter={beehives.length}
             title={"Добавени кошери"}
             className="flex justify-between bg-amber-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
+            href={"/beehives"}
           />
           <Panel
             icon={<UserIcon className="w-8 h-8" />}
             counter={1}
             title={"Настройки на профила"}
             className="flex justify-between bg-pink-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
+            href={"/account"}
           />
         </div>
         <div className="w-1/3 px-4 mt-4">
@@ -54,7 +57,7 @@ export default function Dashboard() {
                 <img src="./beegarden_img.png" alt="BeeGarden Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-sky-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/apiaries/add"}>
+                <Link to={"/apiaries"}>
                   Добави пчелин
                 </Link>
               </div>
@@ -64,7 +67,7 @@ export default function Dashboard() {
                 <img src="./hives_img.png" alt="BeeHives Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-amber-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/beehives/add"}>
+                <Link to={"/beehives"}>
                   Добави Кошер
                 </Link>
               </div>
@@ -74,7 +77,7 @@ export default function Dashboard() {
                 <img src="./notebook_img.png" alt="NoteBook Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-green-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/notebooks/add"}>
+                <Link to={"/notebooks"}>
                   Добави Записка
                 </Link>
               </div>

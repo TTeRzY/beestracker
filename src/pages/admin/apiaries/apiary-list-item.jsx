@@ -1,7 +1,8 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import FormCheckBox from "../../components/forms/form-checkbox";
+import FormCheckBox from "../../../components/forms/form-checkbox";
+import { Link } from "react-router-dom";
 
-export default function ApiaryItem({ apiary_id, name, beehives, type, address }) {
+export default function ApiaryItem({ id, apiary_id, name, beehives, type, address }) {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <td className="w-4 p-4">
@@ -18,12 +19,12 @@ export default function ApiaryItem({ apiary_id, name, beehives, type, address })
       <td className="px-6 py-4">{type}</td>
       <td className="px-6 py-4">{address}</td>
       <td className="px-6 py-4 flex items-center">
-        <a
-          href="#"
+        <Link
+          to={`/apiaries/edit/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <PencilIcon className="w-6 h-6" />
-        </a>
+        </Link>
         <a
           href="#"
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
