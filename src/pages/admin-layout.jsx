@@ -9,9 +9,7 @@ export default function AdminLayout() {
 
   return (
     <div>
-      {noNavbarAndSidebarPaths.includes(currentPath) && <Outlet />}
-      {!noNavbarAndSidebarPaths.includes(currentPath) && (
-        <div className="admin-page">
+      <div className="admin-page">
           <Navbar />
           <div className="flex pt-16 overflow-hidden">
             <Sidebar />
@@ -26,7 +24,6 @@ export default function AdminLayout() {
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }

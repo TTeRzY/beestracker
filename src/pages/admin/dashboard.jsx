@@ -57,7 +57,7 @@ export default function Dashboard() {
                 <img src="./beegarden_img.png" alt="BeeGarden Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-sky-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/apiaries"}>
+                <Link to={"/apiaries/add"}>
                   Добави пчелин
                 </Link>
               </div>
@@ -67,7 +67,7 @@ export default function Dashboard() {
                 <img src="./hives_img.png" alt="BeeHives Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-amber-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/beehives"}>
+                <Link to={"/beehives/add"}>
                   Добави Кошер
                 </Link>
               </div>
@@ -77,7 +77,7 @@ export default function Dashboard() {
                 <img src="./notebook_img.png" alt="NoteBook Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-green-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/notebooks"}>
+                <Link to={"/notebooks/add"}>
                   Добави Записка
                 </Link>
               </div>

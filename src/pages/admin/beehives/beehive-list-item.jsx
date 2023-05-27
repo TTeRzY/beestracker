@@ -1,7 +1,9 @@
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
-import FormCheckBox from "../../components/forms/form-checkbox";
+import { Link } from "react-router-dom";
+import FormCheckBox from "../../../components/forms/form-checkbox";
 
-export default function BeeHiveItem({
+export default function BeeHiveListItem({
+  id,
   date,
   beehive_id,
   apiary_id,
@@ -31,18 +33,18 @@ export default function BeeHiveItem({
       <td className="px-6 py-4">{family_type}</td>
       <td className="px-6 py-4">{bee_queen}</td>
       <td className="px-6 py-4 flex items-center">
-        <a
-          href="#"
+        <Link
+          to={`/beehives/edit/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <PencilIcon className="w-6 h-6" />
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          to={`/beehives/delete/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <TrashIcon className="w-6 h-6" stroke="red" />
-        </a>
+        </Link>
       </td>
     </tr>
   );

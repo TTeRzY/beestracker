@@ -2,7 +2,7 @@ import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import FormCheckBox from "../../../components/forms/form-checkbox";
 import { Link } from "react-router-dom";
 
-export default function ApiaryItem({ id, apiary_id, name, beehives, type, address }) {
+export default function ApiaryListItem({ id, apiary_id, name, beehives, type, address }) {
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
       <td className="w-4 p-4">
@@ -25,12 +25,12 @@ export default function ApiaryItem({ id, apiary_id, name, beehives, type, addres
         >
           <PencilIcon className="w-6 h-6" />
         </Link>
-        <a
-          href="#"
+        <Link
+          to={`/apiaries/delete/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <TrashIcon className="w-6 h-6" stroke="red" />
-        </a>
+        </Link>
       </td>
     </tr>
   );

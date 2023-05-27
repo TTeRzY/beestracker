@@ -1,3 +1,7 @@
 export default function EditApiary() {
-    return 'Edit Apiary Page'
+    return (
+        <div className="edit-apiary">
+            <div className="px-4 pt-6">Редактирай пчелин</div>
+        </div>
+    )
 }

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getBeeHives } from "../../redux/beehives/actions"
+import { getBeeHives } from "../../../redux/beehives/actions"
 import { useEffect } from "react"
-import BeeHiveItem from "./beehive-item"
-import TableHead from "../../components/tables/table-head"
-import FormSearchInput from "../../components/forms/form-search-input"
+import BeeHiveItem from "./beehive-list-item"
+import TableHead from "../../../components/tables/table-head"
+import FormSearchInput from "../../../components/forms/form-search-input"
 
-export default function BeeHives() {
+export default function BeeHivesList() {
   const dispatch = useDispatch()
   const beehives = useSelector((state) => state.beehives)
   const beeHivesTableHeadInfo = ['Дата', 'Кошер №', 'Пчелин №', 'Място в пчелина', 'Вид', 'Семейство', 'Майка', 'Опции']
@@ -27,6 +27,7 @@ export default function BeeHives() {
                 return (
                   <BeeHiveItem
                     key={beehive.beehive_id}
+                    id={beehive.id}
                     date={beehive.date}
                     beehive_id={beehive.beehive_id}
                     apiary_id={beehive.apiary_id}

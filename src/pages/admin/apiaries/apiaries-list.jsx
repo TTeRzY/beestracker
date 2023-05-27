@@ -5,7 +5,7 @@ import ApiaryItem from "./apiary-list-item";
 import TableHead from "../../../components/tables/table-head";
 import FormSearchInput from "../../../components/forms/form-search-input";
 
-export default function Apiaries() {
+export default function ApiariesList() {
   const dispatch = useDispatch()
   const apiaries = useSelector((state) => state.apiaries)
   const apiariesTableHead = ['Номер', 'Име', 'Бр.Кошери', 'Вид', 'Адрес', 'Опции']
@@ -16,7 +16,7 @@ export default function Apiaries() {
 
 
   return (
-    <div className="dashboard-page">
+    <div className="apiaries-list">
       <div className="px-4 pt-6">Пчелини</div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-4 py-6">
         <FormSearchInput htmlFor={"apiaries-search"} label={"Търсене"} id={"apiaries-search"} placeholder={"Търсене на пчелини"}/>

@@ -1,6 +1,6 @@
 export default function FormSearchInput({htmlFor, label, id, placeholder}) {
   return (
-    <div className="pb-4 bg-white dark:bg-gray-900">
+    <div>
       <label htmlFor={htmlFor} className="sr-only">
         {label}
       </label>

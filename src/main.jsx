@@ -3,61 +3,52 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./i18n.config";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./pages/error.jsx";
-import Home from "./pages/home.jsx";
 import Login from "./pages/login.jsx";
-import RootLayout from "./pages/root.jsx";
 import Register from "./pages/register";
-import ForgotPassword from "./pages/forgot-password";
 import Dashboard from "./pages/admin/dashboard";
 import AdminLayout from "./pages/admin-layout";
-import About from "./pages/about";
 import ApiariesList from "./pages/admin/apiaries/apiaries-list";
-import BeeHives from "./pages/admin/BeeHives";
-import Apiary from "./pages/admin/apiaries/Apiary";
 import AddApiary from "./pages/admin/apiaries/add-apiary";
 import EditApiary from "./pages/admin/apiaries/edit-apiary";
 
-const router = createBrowserRouter([
-  // {
-  //     path: '/',
-  //     element: <RootLayout />,
-  //     errorElement: <ErrorPage />,
-  //     children: [
-  //         { index: true, element: <Home /> },
-  //         { path: 'login', element: <Login /> },
-  //         { path: 'register', element: <Register /> },
-  //         { path: 'forgot-password', element: <ForgotPassword /> },
-  //         { path: 'about', element: <About /> },
-  //     ]
-  // },
-  {
-    path: "/",
-    element: <AdminLayout />,
-    errorElement: <ErrorPage />,
-    children: [
-      { index: true, element: <Dashboard /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      {
-        path: "/apiaries",
-        element: <ApiariesList />,
-        children: [
-          { exact, path: "/apiaries/add", element: <AddApiary /> },
-          { path: "/apiaries/view/:id", element: <Apiary /> },
-          { path: "/apiaries/edit/:id", element: <EditApiary /> },
-        ]
-      },
-      
-      { path: "beehives/:", element: <BeeHives /> },
-    ],
-  },
-]);
-
 import { Provider } from "react-redux";
 import configureStore from "./redux/configureStore";
+import AddBeeHive from "./pages/admin/beehives/add-beehive";
+import ViewBeeHive from "./pages/admin/beehives/view-beehive";
+import EditBeeHive from "./pages/admin/beehives/edit-beehive";
+import BeeHivesList from "./pages/admin/beehives/beehives-list";
+import ApiariesLayout from "./pages/admin/apiaries/apiaries-layout";
+import BeeHivesLayout from "./pages/admin/beehives/beehives-layout";
+import ViewApiary from "./pages/admin/apiaries/view-apiary";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route 
+      path="/" 
+      element={<AdminLayout />}
+      errorElement={<ErrorPage />}
+    >
+        <Route index element={<Dashboard />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/apiaries" element={<ApiariesLayout />}>
+            <Route index element={<ApiariesList />} ></Route>
+            <Route path="add" element={<AddApiary />}> </Route>,
+            <Route path="view/:id" element={<ViewApiary />}> </Route>,
+            <Route path="edit/:id" element={<EditApiary />}> </Route>,
+        </Route>
+        <Route path="/beehives" element={<BeeHivesLayout />}>
+            <Route index element={<BeeHivesList />} ></Route>
+            <Route path="add" element={<AddBeeHive />}> </Route>,
+            <Route path="view/:id" element={<ViewBeeHive />}> </Route>,
+            <Route path="edit/:id" element={<EditBeeHive />}> </Route>,
+        </Route>
+    </Route>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
