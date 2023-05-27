@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import BeeHiveItem from "./beehive-list-item"
 import TableHead from "../../../components/tables/table-head"
 import FormSearchInput from "../../../components/forms/form-search-input"
+import { Link } from "react-router-dom"
 
 export default function BeeHivesList() {
   const dispatch = useDispatch()
@@ -18,7 +19,14 @@ export default function BeeHivesList() {
     <div className="dashboard-page">
       <div className="px-4 pt-6">Кошери</div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-4 py-6">
-        <FormSearchInput htmlFor={"beehives-search"} label={"Търсене"} id={"beehives-search"} placeholder={"Търсене на кошери"}/>
+        <div className="flex justify-between mb-5">
+          <FormSearchInput htmlFor={"beehives-search"} label={"Търсене"} id={"beehives-search"} placeholder={"Търсене на кошери"}/>
+          <Link to={"/beehives/add"}>
+          <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">
+            Добави кошер
+          </button>  
+          </Link>
+        </div>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <TableHead data={beeHivesTableHeadInfo} />
           <tbody>
