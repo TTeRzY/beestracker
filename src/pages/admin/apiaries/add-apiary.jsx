@@ -37,14 +37,7 @@ export default function AddApiary() {
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
             onSubmit={() => {
-              // handle form submission
-              // setCurrentUser({
-              //   email: values.email,
-              //   roles: ["ADMIN"],
-              //   id: "123123123",
-              //   userName: "Albundy",
-              // });
-              navigate("/admin");
+              navigate("/apiaries");
             }}
           >
             {({ errors, touched }) => (
@@ -107,17 +100,17 @@ export default function AddApiary() {
                     Медоносни растения в района
                   </div>
                   <div className="plant-types-wrapp w-3/4 flex flex-wrap items-center">
-                    {plantTypes.map((plantType) => {
+                    {plantTypes.map((plantType, index) => {
                       return (
-                        <div className="flex items-center w-1/3 my-2">
+                        <div className="flex items-center w-1/3 my-2" key={index}>
                           <input
-                            id="checked-checkbox"
+                            id={`checked-checkbox-${index}`}
                             type="checkbox"
                             value=""
                             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                           />
                           <label
-                            htmlFor="checked-checkbox"
+                            htmlFor={`checked-checkbox-${index}`}
                             className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
                           >
                             {plantType}
