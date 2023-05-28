@@ -28,11 +28,11 @@ export default function AddApiary() {
   });
   return (
     <div className="add-apiary-page px-4 pt-6 flex items-center justify-center">
-      <div className="add-apiary-form-wrapper w-5/6">
-        <div className="section-title bg-gray-100 text-gray-500 p-3">
+      <div className="add-apiary-form-wrapper w-5/6 shadow-sm border-gray-200 rounded-lg bg-white">
+        <div className="section-title bg-gray-100 text-gray-900 p-3 rounded-t-lg">
           Добави пчелин
         </div>
-        <div className="add-apiary-wrapper bg-white p-5 flex items-center justify-center">
+        <div className="add-apiary-wrapper p-5 flex items-center justify-center">
           <Formik
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
@@ -144,12 +144,15 @@ export default function AddApiary() {
                   }
                 />
 
-                <button
-                  type="submit"
-                  className="text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
-                >
-                  Добави
-                </button>
+                <div className="form-footer flex items-center">
+                  <div className="w-1/6"></div>
+                  <button
+                    type="submit"
+                    className="w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
+                  >
+                    Добави
+                  </button>
+                </div>
               </Form>
             )}
           </Formik>
