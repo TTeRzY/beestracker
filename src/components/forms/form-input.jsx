@@ -9,12 +9,11 @@ export default function FormInput({
   placeholder = "",
   required = "",
   error = "",
-  customComponentClass = "",
   labelClass = "",
   fieldClass = "",
 }) {
   return (
-    <div className={customComponentClass}>
+    <div>
       <label
         htmlFor={htmlFor}
         className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${labelClass}`}

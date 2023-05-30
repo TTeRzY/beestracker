@@ -25,20 +25,12 @@ export default function AddBeeHive() {
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
             onSubmit={() => {
-              // handle form submission
-              // setCurrentUser({
-              //   email: values.email,
-              //   roles: ["ADMIN"],
-              //   id: "123123123",
-              //   userName: "Albundy",
-              // });
               navigate("/admin");
             }}
           >
             {({ errors, touched }) => (
               <Form className="space-y-4 md:space-y-6 w-5/6">
                 <FormInput
-                  customComponentClass={"flex items-center"}
                   labelClass="w-1/6"
                   fieldClass="w-3/4"
                   htmlFor={"beehiveId"}
@@ -52,7 +44,7 @@ export default function AddBeeHive() {
                   }
                 />
 
-                <div className="flex items-center">
+                <div>
                   <label
                     htmlFor="countries"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
@@ -73,7 +65,7 @@ export default function AddBeeHive() {
                   </select>
                 </div>
 
-                <div className="flex items-center">
+                <div>
                   <label
                     htmlFor="countries"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
@@ -98,7 +90,7 @@ export default function AddBeeHive() {
                   </select>
                 </div>
 
-                <div className="flex items-center">
+                <div>
                   <label
                     htmlFor="countries"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
@@ -120,8 +112,7 @@ export default function AddBeeHive() {
                   </select>
                 </div>
 
-                <div className="form-footer flex items-center">
-                  <div className="w-1/6"></div>
+                <div className="form-footer">
                   <button
                     type="submit"
                     className="w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"

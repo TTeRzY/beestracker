@@ -7,7 +7,7 @@ const sideBarMenu = [
     key: "dashboard",
     title: "Табло",
     icon: (
-      <ChartPieIcon className="w-6 h-6" />
+      <ChartPieIcon className="w-6 h-6 text-green-500" />
     ),
     url: "/",
   },
@@ -15,7 +15,7 @@ const sideBarMenu = [
     key: "apiaries",
     title: "Пчелини",
     icon: (
-      <Squares2X2Icon className="w-6 h-6" />
+      <Squares2X2Icon className="w-6 h-6 text-sky-500" />
     ),
     url: "/apiaries",
     submenu: [
@@ -27,7 +27,7 @@ const sideBarMenu = [
     key: "beehives",
     title: "Кошери",
     icon: (
-      <ArchiveBoxIcon className="w-6 h-6" />
+      <ArchiveBoxIcon className="w-6 h-6 text-amber-500" />
     ),
     url: "/beehives",
     submenu: [

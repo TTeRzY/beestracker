@@ -34,16 +34,16 @@ export default function AddApiary() {
         </div>
         <div className="add-apiary-wrapper p-5 flex items-center justify-center">
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ apiaryId: "", apiaryName: "", apiaryLocation: "" }}
             validationSchema={validationSchema}
             onSubmit={() => {
+              debugger
               navigate("/apiaries");
             }}
           >
             {({ errors, touched }) => (
               <Form className="space-y-4 md:space-y-6 w-5/6">
                 <FormInput
-                  customComponentClass={"flex items-center"}
                   labelClass="w-1/6"
                   fieldClass="w-3/4"
                   htmlFor={"apiaryName"}
@@ -57,7 +57,6 @@ export default function AddApiary() {
                   }
                 />
                 <FormInput
-                  customComponentClass={"flex items-center"}
                   labelClass="w-1/6"
                   fieldClass="w-3/4"
                   htmlFor={"apiaryId"}
@@ -69,7 +68,7 @@ export default function AddApiary() {
                   error={errors.apiaryId && touched.apiaryId && errors.apiaryId}
                 />
 
-                <div className="flex items-center">
+                <div>
                   <label
                     htmlFor="countries"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
@@ -95,11 +94,11 @@ export default function AddApiary() {
                   </select>
                 </div>
 
-                <div className="plant-types flex items-center">
-                  <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6">
+                <div className="plant-types">
+                  <div className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Медоносни растения в района
                   </div>
-                  <div className="plant-types-wrapp w-3/4 flex flex-wrap items-center">
+                  <div className="plant-types-wrapp flex flex-wrap items-center">
                     {plantTypes.map((plantType, index) => {
                       return (
                         <div className="flex items-center w-1/3 my-2" key={index}>
@@ -137,8 +136,7 @@ export default function AddApiary() {
                   }
                 />
 
-                <div className="form-footer flex items-center">
-                  <div className="w-1/6"></div>
+                <div className="form-footer">
                   <button
                     type="submit"
                     className="w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
