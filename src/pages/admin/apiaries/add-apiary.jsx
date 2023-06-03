@@ -28,7 +28,7 @@ export default function AddApiary() {
   });
   return (
     <div className="add-apiary-page px-4 pt-6 flex items-center justify-center">
-      <div className="add-apiary-form-wrapper w-5/6 shadow-sm border-gray-200 rounded-lg bg-white">
+      <div className="add-apiary-form-wrapper xl:w-5/6 shadow-sm border-gray-200 rounded-lg bg-white">
         <div className="section-title bg-gray-100 text-gray-900 p-3 rounded-t-lg">
           Добави пчелин
         </div>
@@ -42,10 +42,10 @@ export default function AddApiary() {
             }}
           >
             {({ errors, touched }) => (
-              <Form className="space-y-4 md:space-y-6 w-5/6">
+              <Form className="space-y-4 md:space-y-6 xl:w-5/6">
                 <FormInput
-                  labelClass="w-1/6"
-                  fieldClass="w-3/4"
+                  labelClass="xl:w-1/6"
+                  fieldClass="xl:w-3/4"
                   htmlFor={"apiaryName"}
                   label={"Име на пчелина"}
                   type={"text"}
@@ -57,8 +57,8 @@ export default function AddApiary() {
                   }
                 />
                 <FormInput
-                  labelClass="w-1/6"
-                  fieldClass="w-3/4"
+                  labelClass="xl:w-1/6"
+                  fieldClass="xl:w-3/4"
                   htmlFor={"apiaryId"}
                   label={"Номер на пчелина"}
                   type={"text"}
@@ -71,14 +71,14 @@ export default function AddApiary() {
                 <div>
                   <label
                     htmlFor="countries"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white xl:w-1/6"
                   >
                     Вид на пчелина
                   </label>
                   <select
                     placeholder="Вид на пчелина"
                     id="apiary_type"
-                    class="w-3/4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="xl:w-3/4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option selected disabled>
                       Избери вид на пчелина
@@ -101,7 +101,7 @@ export default function AddApiary() {
                   <div className="plant-types-wrapp flex flex-wrap items-center">
                     {plantTypes.map((plantType, index) => {
                       return (
-                        <div className="flex items-center w-1/3 my-2" key={index}>
+                        <div className="flex items-center w-2/3 xl:w-1/3 my-2" key={index}>
                           <input
                             id={`checked-checkbox-${index}`}
                             type="checkbox"
@@ -121,8 +121,8 @@ export default function AddApiary() {
                 </div>
                 <FormInput
                   customComponentClass={"flex items-center"}
-                  labelClass="w-1/6"
-                  fieldClass="w-3/4"
+                  labelClass="xl:w-1/6"
+                  fieldClass="xl:w-3/4"
                   htmlFor={"apiaryLocation"}
                   label={"Местонахождение (адрес)"}
                   type={"text"}
@@ -139,7 +139,7 @@ export default function AddApiary() {
                 <div className="form-footer">
                   <button
                     type="submit"
-                    className="w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
+                    className="xl:w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
                   >
                     Добави
                   </button>
