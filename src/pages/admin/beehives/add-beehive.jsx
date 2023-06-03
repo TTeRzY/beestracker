@@ -16,11 +16,11 @@ export default function AddBeeHive() {
   });
   return (
     <div className="add-apiary-page px-4 pt-6 flex items-center justify-center">
-      <div className="add-apiary-form-wrapper w-5/6 shadow-lg border-gray-200 rounded-lg bg-white">
+      <div className="add-apiary-form-wrapper w-full xl:w-5/6 shadow-lg border-gray-200 rounded-lg bg-white">
         <div className="section-title bg-gray-200 text-gray-900 p-3 rounded-t-lg">
         Добави кошер
         </div>
-        <div className="add-apiary-wrapper p-5 flex items-center justify-center shadow-b-lg">
+        <div className="add-beehive-wrapper p-5 xl:flex xl:items-center xl:justify-center shadow-b-lg">
           <Formik
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
@@ -29,10 +29,10 @@ export default function AddBeeHive() {
             }}
           >
             {({ errors, touched }) => (
-              <Form className="space-y-4 md:space-y-6 w-5/6">
+              <Form className="space-y-4 md:space-y-6 xl:w-5/6">
                 <FormInput
-                  labelClass="w-1/6"
-                  fieldClass="w-3/4"
+                  labelClass="xl:w-1/6"
+                  fieldClass="xl:w-3/4"
                   htmlFor={"beehiveId"}
                   label={"Номер на кошера"}
                   type={"text"}
@@ -47,14 +47,14 @@ export default function AddBeeHive() {
                 <div>
                   <label
                     htmlFor="countries"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white xl:w-1/6"
                   >
                     Избор на пчелин
                   </label>
                   <select
                     placeholder="Избор на пчелин"
                     id="apiary_type"
-                    class="w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="xl:w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option selected disabled>
                       Добавени пчелини
@@ -68,14 +68,14 @@ export default function AddBeeHive() {
                 <div>
                   <label
                     htmlFor="countries"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white xl:w-1/6"
                   >
                     Вид на кошера
                   </label>
                   <select
                     placeholder="Вид на кошера"
                     id="apiary_type"
-                    class="w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="xl:w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option selected disabled>
                       Видове кошери
@@ -93,14 +93,14 @@ export default function AddBeeHive() {
                 <div>
                   <label
                     htmlFor="countries"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white w-1/6"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white xl:w-1/6"
                   >
                     Тип на кошера
                   </label>
                   <select
                     placeholder="Тип на кошера"
                     id="apiary_type"
-                    class="w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="xl:w-3/4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   >
                     <option selected disabled>
                         Избери тип кошер
@@ -115,7 +115,7 @@ export default function AddBeeHive() {
                 <div className="form-footer">
                   <button
                     type="submit"
-                    className="w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
+                    className="xl:w-1/5 text-white bg-amber-500 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-500 dark:hover:bg-amber-500 dark:focus:ring-amber-800"
                   >
                     Добави
                   </button>
