@@ -37,7 +37,7 @@ const sideBarMenu = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ mobileMenuOpen }) {
   let [isDropDownHidden, setIsDropDownHidden] = useState(true);
 
   function toggleDropDown(event) {
@@ -51,7 +51,7 @@ export default function Sidebar() {
   return (
     <aside
       id="logo-sidebar"
-      className="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+      className={`fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 ${mobileMenuOpen ? '' : 'hidden'} w-64 h-full pt-16 font-normal duration-75 lg:flex transition-width`}
       aria-label="Sidebar"
     >
       <div className="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:border-gray-700">

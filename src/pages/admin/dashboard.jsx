@@ -28,7 +28,7 @@ export default function Dashboard() {
     <div className="dashboard-page">
       <div className="px-4 pt-6">Табло</div>
       <div className="flex flex-wrap w-full px-4 pt-3">
-        <div className="w-2/3">
+        <div className="w-full xl:w-2/3">
           <div className="grid  grid-cols-1 gap-4 mt-4 xl:grid-cols-2 2xl:grid-cols-3">
             <Panel
               icon={<Squares2X2Icon className="w-8 h-8" />}
@@ -54,7 +54,7 @@ export default function Dashboard() {
           </div>
           <Stats />
         </div>
-        <div className="w-1/3 px-4 mt-4">
+        <div className="w-full xl:w-1/3 xl:px-4 mt-4">
           <div>
             <div className="shadow-sm border-gray-200 flex flex-col items-center">
               <div className="bg-white flex justify-center p-3 border border-gray-200 border-b-0 rounded-t-lg w-full">
