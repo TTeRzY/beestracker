@@ -38,8 +38,8 @@ export default function Stats() {
         <h3>Статистика</h3>
       </div>
       <div className="flex flex-wrap">
-        {stats.map((item) => (
-          <StatsItem title={item.title} counter={item.counter} />
+        {stats.map((item, index) => (
+          <StatsItem key={index} title={item.title} counter={item.counter} />
         ))}
       </div>
     </div>

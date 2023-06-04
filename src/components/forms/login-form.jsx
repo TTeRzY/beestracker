@@ -3,10 +3,28 @@ import FormInput from "./form-input";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
 import { Form, Formik } from "formik";
+import { useMutation } from "react-query";
+import { client } from "../../network/clients";
+import { saveUserToken } from "../../utils/token";
+import { loginMutation } from "../../graphql";
 
 export default function LoginForm() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const { mutate: loginUser, data } = useMutation(
+    variables => {
+      return client.request(loginMutation, variables)
+    },
+    {
+      onSuccess: response => {
+        if (response?.login) {
+          saveUserToken(response.login)
+          navigate("/");
+        }
+      },
+    },
+  )
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -17,19 +35,15 @@ export default function LoginForm() {
       .required(t("loginPage.requiredFieldValidation")),
   });
 
+  const onSubmit = formValues => {
+    loginUser(formValues)
+  }
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
       validationSchema={validationSchema}
-      onSubmit={() => {
-        // handle form submission
-        // setCurrentUser({
-        //   email: values.email,
-        //   roles: ["ADMIN"],
-        //   id: "123123123",
-        //   userName: "Albundy",
-        // });
-        navigate("/admin");
+      onSubmit={values  => {
+        onSubmit(values)
       }}
     >
       {({ errors, touched }) => (

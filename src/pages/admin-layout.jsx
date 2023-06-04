@@ -2,12 +2,15 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/admin/navbar";
 import Sidebar from "../components/admin/sidebar";
 import { useState } from "react";
+import MobileDetect from "mobile-detect";
 
 export default function AdminLayout() {
   const location = useLocation();
   const currentPath = location.pathname;
   const noNavbarAndSidebarPaths = ["/login", "/register", "/forgot-password"];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const md = new MobileDetect(window.navigator.userAgent);
+  const isMobile = md.mobile();
 
   function toggleMobileMenu(value) {
     setMobileMenuOpen(value)
@@ -18,9 +21,9 @@ export default function AdminLayout() {
       {noNavbarAndSidebarPaths.includes(currentPath) && <Outlet />}
       {!noNavbarAndSidebarPaths.includes(currentPath) && (
         <div className="admin-page">
-          <Navbar toggleMobileMenu={toggleMobileMenu} mobileMenuOpen={mobileMenuOpen} />
+          <Navbar toggleMobileMenu={toggleMobileMenu} mobileMenuOpen={mobileMenuOpen} isMobile={isMobile} />
           <div className="flex pt-16 overflow-hidden">
-            <Sidebar mobileMenuOpen={mobileMenuOpen} />
+            <Sidebar mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
             <div
               className="fixed inset-0 z-10 hidden "
               id="sidebarBackdrop"

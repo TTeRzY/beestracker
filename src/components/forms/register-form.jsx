@@ -28,14 +28,7 @@ export default function RegisterForm() {
       initialValues={{ email: "", password: "", username: "", name: "" }}
       validationSchema={validationSchema}
       onSubmit={() => {
-        // handle form submission
-        // setCurrentUser({
-        //   email: values.email,
-        //   roles: ["ADMIN"],
-        //   id: "123123123",
-        //   userName: "Albundy",
-        // });
-        navigate("/admin");
+        navigate("/dashboard");
       }}
     >
       {({ errors, touched }) => (

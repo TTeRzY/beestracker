@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
+export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile }) {
+  let [isOpenUserMenu, setIsOpenUserMenu] = useState(false);
+
+  function toggleUserMenu() {
+    setIsOpenUserMenu((isOpenUserMenu = !isOpenUserMenu));
+  }
+
   return (
     <nav className="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start">
             <button
-              onClick={ () => toggleMobileMenu(mobileMenuOpen = !mobileMenuOpen)}
+              onClick={() =>
+                toggleMobileMenu((mobileMenuOpen = !mobileMenuOpen))
+              }
               data-drawer-target="logo-sidebar"
               data-drawer-toggle="logo-sidebar"
               aria-controls="logo-sidebar"
@@ -69,21 +77,38 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
               <div>
                 <button
                   type="button"
-                  className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  className="flex text-sm bg-white rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                   aria-expanded="false"
                   data-dropdown-toggle="dropdown-user"
+                  onClick={toggleUserMenu}
                 >
                   <span className="sr-only">Open user menu</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                    />
+                  </svg>
                 </button>
               </div>
               <div
-                className="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 hidden"
+                className={`z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 ${
+                  isOpenUserMenu ? "block" : "hidden"
+                }`}
                 id="dropdown-user"
                 style={{
                   position: "absolute",
                   inset: "0px auto auto 0px",
                   margin: "0px",
-                  transform: "translate3d(623.2px, 54.4px, 0px)",
+                  transform: `${isOpenUserMenu ? `${isMobile ? "translate3d(199.333px, 58px, 0px)" :"translate(1712px, 61px)"}` : "translate3d(623.2px, 54.4px, 0px)"}`,
                 }}
                 data-popper-placement="bottom"
               >
@@ -92,13 +117,13 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
                     className="text-sm text-gray-900 dark:text-white"
                     role="none"
                   >
-                    Neil Sims
+                    Your Name
                   </p>
                   <p
                     className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                     role="none"
                   >
-                    neil.sims@flowbite.com
+                    your_email@email.com
                   </p>
                 </div>
                 <ul className="py-1" role="none">
@@ -108,7 +133,7 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
-                      Dashboard
+                      Табло
                     </Link>
                   </li>
                   <li>
@@ -117,7 +142,7 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
-                      Settings
+                      Настройки
                     </a>
                   </li>
                   <li>
@@ -126,7 +151,7 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen }) {
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
-                      Sign out
+                      Излез
                     </a>
                   </li>
                 </ul>

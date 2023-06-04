@@ -1,5 +1,5 @@
 import { ArchiveBoxIcon, ChartPieIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const sideBarMenu = [
@@ -37,7 +37,7 @@ const sideBarMenu = [
   },
 ];
 
-export default function Sidebar({ mobileMenuOpen }) {
+export default function Sidebar({ mobileMenuOpen, toggleMobileMenu }) {
   let [isDropDownHidden, setIsDropDownHidden] = useState(true);
 
   function toggleDropDown(event) {
@@ -47,6 +47,20 @@ export default function Sidebar({ mobileMenuOpen }) {
     }
     event.currentTarget.nextSibling.classList.add(('hidden'))
   }
+
+  useEffect(() => {
+    function handleClickOutsideSidebar () {
+      console.log(mobileMenuOpen)
+      if(mobileMenuOpen) {
+        toggleMobileMenu(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutsideSidebar);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideSidebar);
+    };
+  }, []);
 
   return (
     <aside
