@@ -1,12 +1,12 @@
-import { client } from '../network/client'
-import { currentUserQuery } from '../graphql/user'
+import { CURRENT_USER } from '../graphql/user'
 import { useQuery } from 'react-query'
+import {client} from "../network/clients_bak.js";
 
 export const useCurrentUser = () => {
   const { data, isLoading, isFetching } = useQuery(
     'currentUser',
     () => {
-      return client.request(currentUserQuery)
+      return client.request(CURRENT_USER)
     },
     { retry: false },
   )

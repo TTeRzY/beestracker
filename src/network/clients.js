@@ -1,12 +1,27 @@
-import { GraphQLClient } from 'graphql-request'
-import constants from '../constants'
-import { getToken } from '../utils/token'
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import Cookies from "js-cookie";
+import constants from "../constants.js";
 
-const token = getToken()
-const headers = {}
-if (token) {
-  headers.Authorization = `Bearer ${token}`
-}
-export const client = new GraphQLClient(constants.graphqlUrl, {
-  headers,
-})
+const httpLink = createHttpLink({
+    uri: constants.graphqlUrl,
+    credentials: 'same-origin'
+});
+
+const token = Cookies.get('authToken')
+
+const authLink = setContext((_, { headers }) => {
+    // get the authentication token from local storage if it exists
+    // return the headers to the context so httpLink can read them
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : "",
+        }
+    }
+});
+
+export const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache()
+});

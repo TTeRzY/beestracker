@@ -6,10 +6,17 @@
 type Apiary {
   _id: ObjectId!
   apiaryId: String!
-  beehives: [Beehive!]!
+  createdAt: DateTime!
   location: String!
   name: String!
+  updatedAt: DateTime!
   user: User!
+}
+
+input ApiaryInput {
+  apiaryId: String!
+  location: String!
+  name: String!
 }
 
 input BaseUserInput {
@@ -19,14 +26,21 @@ input BaseUserInput {
   password: String!
 }
 
+input BeeHiveInput {
+  apiary: String!
+  beehiveId: String!
+  beehiveType: String!
+  familyType: String!
+}
+
 type Beehive {
   _id: ObjectId!
   apiary: Apiary!
-  beeQueen: String!
   beehiveId: String!
-  date: DateTime!
+  beehiveType: String!
+  createdAt: DateTime!
   familyType: String!
-  type: String!
+  updatedAt: DateTime!
 }
 
 input CreateUserInput {
@@ -43,20 +57,34 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 scalar DateTime
 
 type Mutation {
-  createApiary(apiaryId: String!, beehiveIds: [String!]!, location: String!, name: String!, userId: String!): Apiary!
-  createBeehive(apiaryId: String!, beeQueen: String!, beehiveId: String!, date: DateTime!, familyType: String!, type: String!): Beehive!
+  createApiary(apiary: ApiaryInput!): Apiary!
+  createBeehive(beehive: BeeHiveInput!): Beehive!
   createUser(user: CreateUserInput!): String!
-  deleteApiary(apiaryId: String!): Apiary
-  deleteBeehive(beehiveId: String!): Beehive
+  deleteApiary(_id: String!): Apiary
+  deleteBeehive(_id: String!): Beehive
   deleteUser(_id: String!): User!
   login(email: String!, password: String!): String!
-  updateApiary(apiaryId: String!, beehiveIds: [String!], location: String, name: String): Apiary
-  updateBeehive(apiaryId: String, beeQueen: String, beehiveId: String!, date: DateTime, familyType: String, type: String): Beehive
+  updateApiary(_id: String!, apiary: ApiaryInput!): Apiary
+  updateBeehive(beehive: BeeHiveInput!): Beehive
   updateUser(_id: String!, user: BaseUserInput!): User!
 }
 
 """Mongo object id scalar type"""
 scalar ObjectId
+
+type PaginatedApiaryResponse {
+  items: [Apiary!]!
+  page: Float!
+  totalItems: Float!
+  totalPages: Float!
+}
+
+type PaginatedBeehiveResponse {
+  items: [Beehive!]!
+  page: Float!
+  totalItems: Float!
+  totalPages: Float!
+}
 
 type PaginatedUserResponse {
   items: [User!]!
@@ -66,24 +94,25 @@ type PaginatedUserResponse {
 }
 
 type Query {
+  apiaries(limit: Int = 20, page: Int! = 1): PaginatedApiaryResponse!
+  apiary(_id: String!): Apiary!
+  beehive(_id: String!): Beehive
+  beehives(limit: Int = 20, page: Int! = 1): PaginatedBeehiveResponse!
   currentUser: User!
-  getAllApiaries: [Apiary!]!
-  getAllBeehives: [Beehive!]!
-  getApiary(apiaryId: String!): Apiary
-  getBeehive(beehiveId: String!): Beehive
   user(_id: String!): User!
   users(limit: Int = 20, page: Int! = 1): PaginatedUserResponse!
 }
 
 type User {
   _id: ObjectId!
-  apiaries: [Apiary!]!
+  createdAt: DateTime!
   email: String!
   firstName: String!
   lastName: String!
   occupation: String
   password: String!
   roles: [UserRole!]!
+  updatedAt: DateTime!
 }
 
 enum UserRole {

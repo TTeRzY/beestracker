@@ -2,29 +2,32 @@ import { Link, useNavigate } from "react-router-dom";
 import FormInput from "./form-input";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
-import { Form, Formik } from "formik";
-import { useMutation } from "react-query";
-import { client } from "../../network/clients";
+import {Form, Formik, replace} from "formik";
+import { useMutation } from '@apollo/client'
 import { saveUserToken } from "../../utils/token";
-import { loginMutation } from "../../graphql";
+import { LOGIN_MUTATION } from "../../graphql/user.js";
 
 export default function LoginForm() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [loginUser, { loading, error, data }] = useMutation(LOGIN_MUTATION);
 
-  const { mutate: loginUser, data } = useMutation(
-    variables => {
-      return client.request(loginMutation, variables)
-    },
-    {
-      onSuccess: response => {
-        if (response?.login) {
-          saveUserToken(response.login)
-          navigate("/");
-        }
-      },
-    },
-  )
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  if (data) {
+    saveUserToken(data.login)
+    navigate("/dashboard", {
+      replace: true
+    });
+  }
+
 
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -36,7 +39,9 @@ export default function LoginForm() {
   });
 
   const onSubmit = formValues => {
-    loginUser(formValues)
+    loginUser({ variables: formValues }).then(() => {
+      console.log('success login')
+    })
   }
   return (
     <Formik

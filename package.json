@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.15",
+    "@babel/core": "^7.22.5",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.17",
     "@reduxjs/toolkit": "^1.9.5",
@@ -17,7 +19,6 @@
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
     "graphql-tag": "^2.12.6",
-    "graphql.macro": "^1.4.2",
     "i18next": "^22.4.15",
     "js-cookie": "^3.0.5",
     "localforage": "^1.10.0",
