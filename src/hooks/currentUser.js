@@ -1,8 +1,9 @@
 import { CURRENT_USER } from '../graphql/user'
 import { useQuery } from 'react-query'
-import {client} from "../network/clients_bak.js";
+import {client} from "../network/clients.js";
 
 export const useCurrentUser = () => {
+  debugger
   const { data, isLoading, isFetching } = useQuery(
     'currentUser',
     () => {

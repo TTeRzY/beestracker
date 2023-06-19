@@ -1,24 +1,24 @@
-import actionTypes from "./action-types";
 import axios from "axios";
+import { actionTypes } from "./action-types";
 
 /* SETTERS */
 
-export function setBeeHives(value) {
+export function setCurrentUser(value) {
     return {
-        type: actionTypes.SET_BEEHIVES,
+        type: actionTypes.SET_CURRENT_USER,
         payload: value,
     }
 }
 
 /* GETTERS */
 
-// export function getBeeHives() {
+// export function getCurrentUser() {
 //     return async (dispatch) => {
 //         try {
-//             axios.get('../beehives.json')
+//             axios.get('../apiaries.json')
 //                 .then(response => response.data)
 //                 .then(response => {
-//                     dispatch(setBeeHives(response?.data ?? []))
+//                     dispatch(setApiaries(response?.data ?? []))
 //                 })
 //         } catch (error) {
 //             console.log(error);

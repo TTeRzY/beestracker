@@ -1,7 +1,4 @@
-import { getApiaries } from "../../redux/apiaries/actions";
-import { getBeeHives } from "../../redux/beehives/actions";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   ArchiveBoxIcon,
   Squares2X2Icon,
@@ -12,17 +9,8 @@ import { Link } from "react-router-dom";
 import Stats from "../../components/stats/stats";
 
 export default function Dashboard() {
-  const dispatch = useDispatch();
   const apiaries = useSelector((state) => state.apiaries);
   const beehives = useSelector((state) => state.beehives);
-
-  useEffect(() => {
-    dispatch(getApiaries());
-  }, []);
-
-  useEffect(() => {
-    dispatch(getBeeHives());
-  }, []);
 
   return (
     <div className="dashboard-page">

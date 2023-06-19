@@ -2,7 +2,7 @@ import { useState } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {removeUserToken} from "../../utils/token.js";
 
-export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile }) {
+export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile, currentUser }) {
   let [isOpenUserMenu, setIsOpenUserMenu] = useState(false);
   const navigate = useNavigate();
 
@@ -127,13 +127,13 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile }) {
                     className="text-sm text-gray-900 dark:text-white"
                     role="none"
                   >
-                    Your Name
+                    {`${currentUser.firstName} ${currentUser.lastName}`}
                   </p>
                   <p
                     className="text-sm font-medium text-gray-900 truncate dark:text-gray-300"
                     role="none"
                   >
-                    your_email@email.com
+                    {currentUser.email}
                   </p>
                 </div>
                 <ul className="py-1" role="none">

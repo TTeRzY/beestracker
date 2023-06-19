@@ -6,6 +6,7 @@
 type Apiary {
   _id: ObjectId!
   apiaryId: String!
+  apiaryType: String!
   createdAt: DateTime!
   location: String!
   name: String!
@@ -15,6 +16,7 @@ type Apiary {
 
 input ApiaryInput {
   apiaryId: String!
+  apiaryType: String!
   location: String!
   name: String!
 }
@@ -105,6 +107,7 @@ type Query {
 
 type User {
   _id: ObjectId!
+  apiaries: [Apiary!]!
   createdAt: DateTime!
   email: String!
   firstName: String!
