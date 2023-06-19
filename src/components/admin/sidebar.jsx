@@ -9,7 +9,7 @@ const sideBarMenu = [
     icon: (
       <ChartPieIcon className="w-6 h-6 text-green-500" />
     ),
-    url: "/",
+    url: "/dashboard",
   },
   {
     key: "apiaries",
@@ -17,10 +17,10 @@ const sideBarMenu = [
     icon: (
       <Squares2X2Icon className="w-6 h-6 text-sky-500" />
     ),
-    url: "/apiaries",
+    url: "/dashboard/apiaries",
     submenu: [
-      { key: "all-apiaries", url: "/apiaries", title: "Всички пчелини" },
-      { key: "add-apiary", url: "/apiaries/add", title: "Добави пчелин" },
+      { key: "all-apiaries", url: "/dashboard/apiaries", title: "Всички пчелини" },
+      { key: "add-apiary", url: "/dashboard/apiaries/add", title: "Добави пчелин" },
     ],
   },
   {
@@ -29,10 +29,10 @@ const sideBarMenu = [
     icon: (
       <ArchiveBoxIcon className="w-6 h-6 text-amber-500" />
     ),
-    url: "/beehives",
+    url: "/dashboard/beehives",
     submenu: [
-      { key: "all-beehives", url: "/beehives", title: "Всички кошери" },
-      { key: "add-beehive", url: "/beehives/add", title: "Добави кошер" },
+      { key: "all-beehives", url: "/dashboard/beehives", title: "Всички кошери" },
+      { key: "add-beehive", url: "/dashboard/beehives/add", title: "Добави кошер" },
     ],
   },
 ];

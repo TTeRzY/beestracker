@@ -10,7 +10,7 @@ export default function Example() {
                     <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">{error.statusText || error.message}</h1>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <Link
-                            to="/"
+                            to="/dashboard"
                             className="rounded-md bg-amber-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
                         >
                             Go back home

@@ -35,14 +35,14 @@ export default function Dashboard() {
               counter={apiaries.length}
               title={"Добавени пчелини"}
               className="flex justify-between bg-sky-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
-              href={"/apiaries"}
+              href={"/dashboard/apiaries"}
             />
             <Panel
               icon={<ArchiveBoxIcon className="w-8 h-8" />}
               counter={beehives.length}
               title={"Добавени кошери"}
               className="flex justify-between bg-amber-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
-              href={"/beehives"}
+              href={"/dashboard/beehives"}
             />
             <Panel
               icon={<UserIcon className="w-8 h-8" />}
@@ -61,7 +61,7 @@ export default function Dashboard() {
                 <img src="./beegarden_img.png" alt="BeeGarden Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-sky-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/apiaries/add"}>Добави пчелин</Link>
+                <Link to={"/dashboard/apiaries/add"}>Добави пчелин</Link>
               </div>
             </div>
             <div className="shadow-sm border-gray-200 flex flex-col items-center mt-5">
@@ -69,7 +69,7 @@ export default function Dashboard() {
                 <img src="./hives_img.png" alt="BeeHives Image" />
               </div>
               <div className="text-center text-white px-2 py-4 bg-amber-500 border border-t-0 border-gray-200 rounded-b-lg w-full">
-                <Link to={"/beehives/add"}>Добави Кошер</Link>
+                <Link to={"/dashboard/beehives/add"}>Добави Кошер</Link>
               </div>
             </div>
             <div className="shadow-sm border-gray-200 flex flex-col items-center mt-5">

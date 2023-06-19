@@ -34,13 +34,13 @@ export default function BeeHiveListItem({
       <td className="px-6 py-4">{bee_queen}</td>
       <td className="px-6 py-4 flex items-center">
         <Link
-          to={`/beehives/edit/${id}`}
+          to={`/dashboard/beehives/edit/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <PencilIcon className="w-6 h-6" />
         </Link>
         <Link
-          to={`/beehives/delete/${id}`}
+          to={`/dashboard/beehives/delete/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <TrashIcon className="w-6 h-6" stroke="red" />

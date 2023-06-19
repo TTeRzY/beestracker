@@ -21,7 +21,7 @@ export default function BeeHivesList() {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-4 py-6">
         <div className="flex justify-between mb-5">
           <FormSearchInput htmlFor={"beehives-search"} label={"Търсене"} id={"beehives-search"} placeholder={"Търсене на кошери"}/>
-          <Link to={"/beehives/add"}>
+          <Link to={"/dashboard/beehives/add"}>
           <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">
             Добави кошер
           </button>  

@@ -38,7 +38,7 @@ export default function AddApiary() {
             validationSchema={validationSchema}
             onSubmit={() => {
               debugger
-              navigate("/apiaries");
+              navigate("/dashboard/apiaries");
             }}
           >
             {({ errors, touched }) => (

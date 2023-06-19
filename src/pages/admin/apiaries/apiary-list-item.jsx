@@ -20,13 +20,13 @@ export default function ApiaryListItem({ id, apiary_id, name, beehives, type, ad
       <td className="px-6 py-4">{address}</td>
       <td className="px-6 py-4 flex items-center">
         <Link
-          to={`/apiaries/edit/${id}`}
+          to={`/dashboard/apiaries/edit/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <PencilIcon className="w-6 h-6" />
         </Link>
         <Link
-          to={`/apiaries/delete/${id}`}
+          to={`/dashboard/apiaries/delete/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
         >
           <TrashIcon className="w-6 h-6" stroke="red" />

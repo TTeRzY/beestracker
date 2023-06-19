@@ -22,7 +22,7 @@ export default function ApiariesList() {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-4 py-6">
       <div className="flex justify-between mb-5">
           <FormSearchInput htmlFor={"apiaries-search"} label={"Търсене"} id={"apiaries-search"} placeholder={"Търсене на пчелини"}/>
-          <Link to={"/apiaries/add"}>
+          <Link to={"/dashboard/apiaries/add"}>
           <button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-lg">
             Добави пчелин
           </button>  
