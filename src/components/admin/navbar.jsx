@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import {Link, useNavigate} from "react-router-dom";
+import {removeUserToken} from "../../utils/token.js";
 
 export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile }) {
   let [isOpenUserMenu, setIsOpenUserMenu] = useState(false);
+  const navigate = useNavigate();
 
   function toggleUserMenu() {
     setIsOpenUserMenu((isOpenUserMenu = !isOpenUserMenu));
+  }
+
+  function logoutUser(e) {
+    e.preventDefault()
+    removeUserToken()
+    navigate("/login", {
+      replace: true
+    });
   }
 
   return (
@@ -147,9 +157,10 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile }) {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      tabIndex={0}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
+                      onClick={logoutUser}
                     >
                       Излез
                     </a>

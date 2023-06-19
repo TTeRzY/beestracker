@@ -8,3 +8,7 @@ export const saveUserToken = token => {
     expires: 1,
   })
 }
+
+export const removeUserToken = () => {
+  Cookies.remove(tokenCookie)
+}

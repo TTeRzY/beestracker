@@ -41,7 +41,7 @@ const ProtectedRoute = (
         children,
     }) => {
     if (!isLoggedIn) {
-        return <Navigate to={redirectPath} replace/>;
+        return <Navigate to={redirectPath} replace />;
     }
 
     return children;
@@ -49,7 +49,7 @@ const ProtectedRoute = (
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route>
+        <Route errorElement={<ErrorPage />}>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route

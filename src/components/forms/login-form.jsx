@@ -10,7 +10,7 @@ import { LOGIN_MUTATION } from "../../graphql/user.js";
 export default function LoginForm() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [loginUser, { loading, error, data }] = useMutation(LOGIN_MUTATION);
+  const [loginUser, { loading, error }] = useMutation(LOGIN_MUTATION);
 
 
   if (loading) {
@@ -19,13 +19,6 @@ export default function LoginForm() {
 
   if (error) {
     return <p>Error: {error.message}</p>;
-  }
-
-  if (data) {
-    saveUserToken(data.login)
-    navigate("/dashboard", {
-      replace: true
-    });
   }
 
 
@@ -39,10 +32,11 @@ export default function LoginForm() {
   });
 
   const onSubmit = formValues => {
-    loginUser({ variables: formValues }).then(() => {
-      console.log('success login')
+    loginUser({variables: formValues}).then(({ data }) => {
+      saveUserToken(data.login)
+      navigate('/dashboard');
     })
-  }
+   }
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
