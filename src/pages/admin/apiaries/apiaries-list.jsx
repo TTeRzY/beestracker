@@ -52,7 +52,7 @@ export default function ApiariesList() {
                                     apiaryId={apiary.apiaryId}
                                     name={apiary.name}
                                     beehives={getBeehivesSize(apiary._id)}
-                                    type={apiary.type}
+                                    apiaryType={apiary.apiaryType}
                                     address={apiary.location}
                                 />
                             );
