@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import {useEffect} from "react";
 import {setBeeHives} from "../../../redux/beehives/actions.js";
-import {APIARIES} from "../../../graphql/apiaries.js";
+import {GET_APIARIES} from "../../../graphql/apiaries.js";
 import {setApiaries} from "../../../redux/apiaries/actions.js";
 
 export default function ApiariesList() {
@@ -14,7 +14,7 @@ export default function ApiariesList() {
     const dispatch = useDispatch()
     const apiaries = useSelector((state) => state.apiaries)
     const beehives = useSelector(state => state.beehives)
-    const {loading, error, data, refetch} = useQuery(APIARIES)
+    const {loading, error, data, refetch} = useQuery(GET_APIARIES)
 
     useEffect(() => {
         if (data) {
@@ -29,7 +29,6 @@ export default function ApiariesList() {
     function getBeehivesSize(_id) {
         return beehives.filter(beehive => beehive.apiary._id === _id).length
     }
-
 
     return (
         <div className="apiaries-list">

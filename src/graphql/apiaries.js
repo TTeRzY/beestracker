@@ -1,6 +1,6 @@
 import { gql } from 'graphql-tag';
 
-export const APIARIES = gql `
+export const GET_APIARIES = gql `
     query Apiaries {
         apiaries {
             page
@@ -16,6 +16,14 @@ export const APIARIES = gql `
                     _id
                 }
             }
+        }
+    }
+`
+
+export const DELETE_APIARY = gql`
+    mutation DeleteApiary($_id: String!) {
+        deleteApiary(_id: $_id) {
+            _id
         }
     }
 `

@@ -7,7 +7,7 @@ import {CURRENT_USER} from "../graphql/user.js";
 import {useQuery} from "@apollo/client";
 import {setCurrentUser} from "../redux/user/actions.js";
 import {useDispatch, useSelector} from "react-redux";
-import {APIARIES} from "../graphql/apiaries.js";
+import {GET_APIARIES} from "../graphql/apiaries.js";
 import {setApiaries} from "../redux/apiaries/actions.js";
 import {GET_BEEHIVES} from "../graphql/beehives.js";
 import {setBeeHives} from "../redux/beehives/actions.js";
@@ -25,7 +25,7 @@ export default function AdminLayout() {
     const currentUser = useSelector(state => state.currentUser)
 
     const {loading: userLoading, error: userError, data: userData} = useQuery(CURRENT_USER);
-    const {loading: apiariesLoading, error: apiariesError, data: apiariesData} = useQuery(APIARIES)
+    const {loading: apiariesLoading, error: apiariesError, data: apiariesData} = useQuery(GET_APIARIES)
     const {loading: beehivesLoading, error: beehivesError, data: beehivesData} = useQuery(GET_BEEHIVES)
 
 

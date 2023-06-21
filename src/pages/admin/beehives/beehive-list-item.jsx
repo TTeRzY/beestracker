@@ -1,5 +1,5 @@
 import {PencilIcon, TrashIcon} from "@heroicons/react/24/outline";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import FormCheckBox from "../../../components/forms/form-checkbox";
 import {formatDate} from "../../../helpers.js";
 import {useMutation, useQuery} from "@apollo/client";
@@ -14,8 +14,6 @@ export default function BeeHiveListItem({
                                             beehiveType,
                                             familyType,
                                         }) {
-
-    const navigate = useNavigate()
     const [deleteItem, { loading, error }] = useMutation(DELETE_BEEHIVE);
     const {refetch} = useQuery(GET_BEEHIVES)
 
@@ -62,8 +60,7 @@ export default function BeeHiveListItem({
                 <Link
                     tabIndex={"0"}
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
-                    onClick={() => handleDelete(id)
-                    }
+                    onClick={() => handleDelete(id)}
                 >
                     <TrashIcon className="w-6 h-6" stroke="red"/>
                 </Link>
