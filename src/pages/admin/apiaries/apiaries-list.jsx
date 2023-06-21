@@ -14,11 +14,15 @@ export default function ApiariesList() {
     const dispatch = useDispatch()
     const apiaries = useSelector((state) => state.apiaries)
     const beehives = useSelector(state => state.beehives)
+    const {loading, error, data, refetch} = useQuery(APIARIES)
 
-    const {loading, error, data} = useQuery(APIARIES)
     useEffect(() => {
-        if (data && !apiaries.length) {
+        if (data) {
             dispatch(setApiaries(data?.apiaries?.items))
+        }
+        if (!loading && !error) {
+            // Fetch the data again
+            refetch()
         }
     }, [data, dispatch]);
 

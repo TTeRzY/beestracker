@@ -4,7 +4,7 @@ import TableHead from "../../../components/tables/table-head"
 import FormSearchInput from "../../../components/forms/form-search-input"
 import { Link } from "react-router-dom"
 import {useQuery} from "@apollo/client";
-import {BEEHIVES} from "../../../graphql/beehives.js";
+import {GET_BEEHIVES} from "../../../graphql/beehives.js";
 import {useEffect} from "react";
 import {setBeeHives} from "../../../redux/beehives/actions.js";
 
@@ -12,10 +12,15 @@ export default function BeeHivesList() {
   const dispatch = useDispatch()
   const beehives = useSelector((state) => state.beehives)
   const beeHivesTableHeadInfo = ['Дата', 'Кошер №', 'Пчелин №', 'Място в пчелина', 'Вид', 'Семейство', 'Опции']
-  const {loading, error, data} = useQuery(BEEHIVES)
+  const {loading, error, data, refetch} = useQuery(GET_BEEHIVES)
+
   useEffect(() => {
-    if (data && !beehives.length) {
+    if (data) {
       dispatch(setBeeHives(data?.beehives?.items))
+    }
+    if (!loading && !error) {
+      // Fetch the data again
+      refetch();
     }
   }, [data, dispatch]);
 

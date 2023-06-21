@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import FormInput from "./form-input";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
-import {Form, Formik, replace} from "formik";
+import {Form, Formik} from "formik";
 import { useMutation } from '@apollo/client'
 import { saveUserToken } from "../../utils/token";
 import { LOGIN_MUTATION } from "../../graphql/user.js";
@@ -12,13 +12,12 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const [loginUser, { loading, error }] = useMutation(LOGIN_MUTATION);
 
-
   if (loading) {
-    return <p>Loading...</p>;
+    console.log('login loading')
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    console.log('login error: ', error)
   }
 
 
