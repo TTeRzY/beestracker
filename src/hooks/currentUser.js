@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import {client} from "../network/clients.js";
 
 export const useCurrentUser = () => {
-  debugger
   const { data, isLoading, isFetching } = useQuery(
     'currentUser',
     () => {

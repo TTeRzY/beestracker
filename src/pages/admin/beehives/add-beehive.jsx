@@ -50,7 +50,6 @@ export default function AddBeeHive() {
                         initialValues={{beehiveId: "", apiary: "", beehiveType: "", familyType: ""}}
                         validationSchema={validationSchema}
                         onSubmit={(values) => {
-                            debugger
                             onSubmit(values)
                         }}
                     >

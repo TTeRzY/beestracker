@@ -37,7 +37,6 @@ export default function AddApiary() {
             initialValues={{ apiaryId: "", apiaryName: "", apiaryLocation: "" }}
             validationSchema={validationSchema}
             onSubmit={() => {
-              debugger
               navigate("/dashboard/apiaries");
             }}
           >
