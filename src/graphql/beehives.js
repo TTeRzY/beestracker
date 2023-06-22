@@ -17,7 +17,6 @@ export const CREATE_BEEHIVE = gql`
             familyType
             apiary {
                 _id
-                name
             }
         }
     }
@@ -38,7 +37,6 @@ export const GET_BEEHIVES = gql `
                     _id
                     apiaryId
                     location
-                    name
                 }
             }
         }

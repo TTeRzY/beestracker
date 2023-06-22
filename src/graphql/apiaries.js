@@ -33,6 +33,34 @@ export const CREATE_APIARY = gql`
     }
 `
 
+export const GET_APIARY = gql`
+    query GetApiary($_id: String!) {
+        apiary(_id: $_id) {
+            _id,
+            apiaryId,
+            apiaryType
+            location
+            user {
+                _id
+            }
+        }
+    }
+`
+
+export const UPDATE_APIARY = gql`
+    mutation UpdateApiary($apiary: ApiaryInput!, $_id: String!) {
+        updateApiary(apiary: $apiary, _id: $_id) {
+            _id,
+            apiaryId
+            apiaryType
+            location
+            user {
+                _id
+            }
+        }
+    }
+`
+
 export const DELETE_APIARY = gql`
     mutation DeleteApiary($_id: String!) {
         deleteApiary(_id: $_id) {
