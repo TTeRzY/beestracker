@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {useMutation, useQuery} from "@apollo/client";
 import {DELETE_APIARY, GET_APIARIES} from "../../../graphql/apiaries.js";
 
-export default function ApiaryListItem({ id, apiaryId, name, beehives, apiaryType, address }) {
+export default function ApiaryListItem({ id, apiaryId, beehives, apiaryType, address }) {
     const [deleteItem, { loading, error }] = useMutation(DELETE_APIARY);
     const {refetch} = useQuery(GET_APIARIES)
     const handleDelete = (id) => {
@@ -32,7 +32,6 @@ export default function ApiaryListItem({ id, apiaryId, name, beehives, apiaryTyp
       >
         {apiaryId}
       </th>
-      <td className="px-6 py-4">{name}</td>
       <td className="px-6 py-4">{beehives}</td>
       <td className="px-6 py-4">{apiaryType}</td>
       <td className="px-6 py-4">{address}</td>

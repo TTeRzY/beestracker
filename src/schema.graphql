@@ -9,7 +9,6 @@ type Apiary {
   apiaryType: String!
   createdAt: DateTime!
   location: String!
-  name: String!
   updatedAt: DateTime!
   user: User!
 }
@@ -18,7 +17,6 @@ input ApiaryInput {
   apiaryId: String!
   apiaryType: String!
   location: String!
-  name: String!
 }
 
 input BaseUserInput {

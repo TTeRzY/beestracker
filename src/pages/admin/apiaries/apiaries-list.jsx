@@ -10,7 +10,7 @@ import {GET_APIARIES} from "../../../graphql/apiaries.js";
 import {setApiaries} from "../../../redux/apiaries/actions.js";
 
 export default function ApiariesList() {
-    const apiariesTableHead = ['Номер', 'Име', 'Бр.Кошери', 'Вид', 'Адрес', 'Опции']
+    const apiariesTableHead = ['Номер', 'Бр.Кошери', 'Вид', 'Адрес', 'Опции']
     const dispatch = useDispatch()
     const apiaries = useSelector((state) => state.apiaries)
     const beehives = useSelector(state => state.beehives)
@@ -53,7 +53,6 @@ export default function ApiariesList() {
                                     key={apiary._id}
                                     id={apiary._id}
                                     apiaryId={apiary.apiaryId}
-                                    name={apiary.name}
                                     beehives={getBeehivesSize(apiary._id)}
                                     apiaryType={apiary.apiaryType}
                                     address={apiary.location}

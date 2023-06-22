@@ -8,13 +8,26 @@ export const GET_APIARIES = gql `
                 _id
                 apiaryId
                 apiaryType
-                name
                 location
                 createdAt
                 updatedAt
                 user {
                     _id
                 }
+            }
+        }
+    }
+`
+
+export const CREATE_APIARY = gql`
+    mutation CreateApiary($apiary: ApiaryInput!) {
+        createApiary(apiary: $apiary) {
+            _id
+            apiaryId
+            apiaryType
+            location
+            user {
+                _id
             }
         }
     }

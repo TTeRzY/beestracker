@@ -96,7 +96,7 @@ export default function AddBeeHive() {
                                         <option value="" disabled={""}>Добавени пчелини</option>
                                         {apiaries.map(apiary => {
                                             return (
-                                                <option value={apiary._id}>{apiary.name}</option>
+                                                <option key={apiary._id} value={apiary._id}>{apiary.name}</option>
                                             )
                                         })}
                                     </select>
@@ -104,7 +104,7 @@ export default function AddBeeHive() {
 
                                 <div>
                                     <label
-                                        htmlFor="countries"
+                                        htmlFor="beehiveType"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white xl:w-1/6"
                                     >
                                         Вид на кошера
