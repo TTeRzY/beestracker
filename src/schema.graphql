@@ -65,7 +65,7 @@ type Mutation {
   deleteUser(_id: String!): User!
   login(email: String!, password: String!): String!
   updateApiary(_id: String!, apiary: ApiaryInput!): Apiary
-  updateBeehive(beehive: BeeHiveInput!): Beehive
+  updateBeehive(_id: String!, beehive: BeeHiveInput!): Beehive
   updateUser(_id: String!, user: BaseUserInput!): User!
 }
 

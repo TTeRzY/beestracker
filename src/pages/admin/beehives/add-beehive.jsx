@@ -96,7 +96,7 @@ export default function AddBeeHive() {
                                         <option value="" disabled={""}>Добавени пчелини</option>
                                         {apiaries.map(apiary => {
                                             return (
-                                                <option key={apiary._id} value={apiary._id}>{apiary.name}</option>
+                                                <option key={apiary._id} value={apiary._id}>{apiary.apiaryId}</option>
                                             )
                                         })}
                                     </select>
