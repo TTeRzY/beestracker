@@ -1,4 +1,4 @@
-import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import {PencilIcon, Squares2X2Icon, TrashIcon} from "@heroicons/react/24/outline";
 import FormCheckBox from "../../../components/forms/form-checkbox";
 import { Link } from "react-router-dom";
 import {useMutation, useQuery} from "@apollo/client";
@@ -36,6 +36,12 @@ export default function ApiaryListItem({ id, apiaryId, beehives, apiaryType, add
       <td className="px-6 py-4">{apiaryType}</td>
       <td className="px-6 py-4">{address}</td>
       <td className="px-6 py-4 flex items-center">
+          <Link
+              to={`/dashboard/apiaries/view/${id}`}
+              className="font-medium text-sky-600 dark:text-sky-500 hover:underline px-1"
+          >
+              <Squares2X2Icon className="w-6 h-6"/>
+          </Link>
         <Link
           to={`/dashboard/apiaries/edit/${id}`}
           className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"

@@ -1,4 +1,4 @@
-import {PencilIcon, TrashIcon} from "@heroicons/react/24/outline";
+import {ArchiveBoxIcon, PencilIcon, TrashIcon} from "@heroicons/react/24/outline";
 import {Link} from "react-router-dom";
 import FormCheckBox from "../../../components/forms/form-checkbox";
 import {formatDate} from "../../../helpers.js";
@@ -14,7 +14,7 @@ export default function BeeHiveListItem({
                                             beehiveType,
                                             familyType,
                                         }) {
-    const [deleteItem, { loading, error }] = useMutation(DELETE_BEEHIVE);
+    const [deleteItem, { loading, error }] = useMutation(DELETE_BEEHIVE)
     const {refetch} = useQuery(GET_BEEHIVES)
 
     const handleDelete = (id) => {
@@ -51,6 +51,12 @@ export default function BeeHiveListItem({
             <td className="px-6 py-4">{beehiveType}</td>
             <td className="px-6 py-4">{familyType}</td>
             <td className="px-6 py-4 flex items-center">
+                <Link
+                    to={`/dashboard/beehives/view/${id}`}
+                    className="font-medium text-amber-600 dark:text-blue-500 hover:underline px-1"
+                >
+                    <ArchiveBoxIcon className="w-6 h-6"/>
+                </Link>
                 <Link
                     to={`/dashboard/beehives/edit/${id}`}
                     className="font-medium text-blue-600 dark:text-blue-500 hover:underline px-1"
