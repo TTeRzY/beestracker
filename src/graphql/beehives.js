@@ -7,8 +7,11 @@ export const GET_BEEHIVE = gql`
             beehiveId
             beehiveType
             familyType
+            createdAt
+            updatedAt
             apiary {
                 _id
+                apiaryId
             }
         }
     }

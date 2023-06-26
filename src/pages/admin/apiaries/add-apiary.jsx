@@ -71,6 +71,7 @@ export default function AddApiary() {
                           }) => (
                             <Form className="space-y-4 md:space-y-6 xl:w-5/6">
                                 <FormInput
+                                    value={values.apiaryId}
                                     labelClass="xl:w-1/6"
                                     fieldClass="xl:w-3/4"
                                     htmlFor={"apiaryId"}
@@ -135,15 +136,16 @@ export default function AddApiary() {
                                 {/*  </div>*/}
                                 {/*</div>*/}
                                 <FormInput
+                                    value={values.location}
                                     customComponentClass={"flex items-center"}
                                     labelClass="xl:w-1/6"
                                     fieldClass="xl:w-3/4"
                                     htmlFor={"location"}
-                                    label={"Местонахождение (адрес)"}
+                                    label={"Локация"}
                                     type={"text"}
                                     name={"location"}
                                     id={"location"}
-                                    placeholder="Въведете адрес"
+                                    placeholder="Въведете локация на пчелина (42.056483 24.4756083)"
                                     error={
                                         errors.location &&
                                         touched.location &&

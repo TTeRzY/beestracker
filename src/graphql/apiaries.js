@@ -40,6 +40,7 @@ export const GET_APIARY = gql`
             apiaryId,
             apiaryType
             location
+            createdAt
             user {
                 _id
             }
