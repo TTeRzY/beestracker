@@ -31,16 +31,13 @@ import Cookies from 'js-cookie'
 
 const queryClient = new QueryClient()
 
-const cookies = Cookies.get('authToken')
-const isLoggedIn = !!cookies;
-
 const ProtectedRoute = (
     {
         isLoggedIn,
         redirectPath = '/login',
         children,
     }) => {
-    if (!isLoggedIn) {
+    if (!Cookies.get('authToken')) {
         return <Navigate to={redirectPath} replace />;
     }
 
@@ -55,7 +52,7 @@ const router = createBrowserRouter(
             <Route
                 path="/dashboard"
                 element={
-                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <ProtectedRoute isLoggedIn={Cookies.get('authToken')}>
                     <AdminLayout/>
                 </ProtectedRoute>}
                 errorElement={<ErrorPage/>}

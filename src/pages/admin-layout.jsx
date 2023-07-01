@@ -28,7 +28,6 @@ export default function AdminLayout() {
     const {loading: apiariesLoading, error: apiariesError, data: apiariesData} = useQuery(GET_APIARIES)
     const {loading: beehivesLoading, error: beehivesError, data: beehivesData} = useQuery(GET_BEEHIVES)
 
-
     useEffect(() => {
         if (userData) {
             dispatch(setCurrentUser(userData?.currentUser))

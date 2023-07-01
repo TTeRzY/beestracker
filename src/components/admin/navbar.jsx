@@ -139,7 +139,7 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile, cur
                 <ul className="py-1" role="none">
                   <li>
                     <Link
-                      to="/"
+                      to="/dashboard"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
@@ -147,13 +147,13 @@ export default function Navbar({ toggleMobileMenu, mobileMenuOpen, isMobile, cur
                     </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to={"/dashboard/user"}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                       role="menuitem"
                     >
                       Настройки
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a
