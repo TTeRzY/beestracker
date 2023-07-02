@@ -11,7 +11,6 @@ export const GET_BEEHIVE = gql`
             updatedAt
             apiary {
                 _id
-                apiaryId
             }
         }
     }

@@ -1,7 +1,7 @@
 export default function Loader() {
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-100"></div>
+        <div className="absolute inset-0 bg-gray-300 bg-opacity-20 flex items-center justify-center h-full">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-amber-500"></div>
         </div>
     );
 };

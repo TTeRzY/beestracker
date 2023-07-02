@@ -1,12 +1,26 @@
 import {useDispatch, useSelector} from "react-redux";
-import {ChartBarSquareIcon} from "@heroicons/react/20/solid/index.js";
+import {useQuery} from "@apollo/client";
+import {CURRENT_USER} from "../../../graphql/user.js";
+import {useEffect} from "react";
+import {setCurrentUser} from "../../../redux/user/actions.js";
+import Loader from "../../../components/Loader.jsx";
 
 export default function User() {
+    const dispatch = useDispatch()
+    const {loading, error, data} = useQuery(CURRENT_USER);
     const user = useSelector(state => state.currentUser)
+
+    useEffect(() => {
+        if (data) {
+            dispatch(setCurrentUser(data?.currentUser))
+        }
+    }, [data, dispatch])
+
     return (
-        <div className="user-information px-4 py-3">
+        <div className="user-information px-4 py-3 relative h-screen">
             <h3 className="font-bold text-md px-4 pt-5">Настройки потребител:</h3>
-            <div className="flex flex-wrap w-full ">
+            {loading && <Loader />}
+            {Object.keys(user).length > 0 && <div className="flex flex-wrap w-full ">
                 <div className={"w-full xl:w-1/3 xl:px-4 mt-4"}>
                     <div className="bg-white">
                         <div className="p-4 text-center">
@@ -16,20 +30,6 @@ export default function User() {
                             <h3 className="m-0 text-lg font-bold">{`${user.firstName} ${user.lastName}`}</h3>
                             <h3 className="m-0 text-md">{user.email}</h3>
                         </div>
-                        {/*<div className="p-4 text-center bg-gray-200">*/}
-                        {/*    <b>Прикачете снимка за Вашия профил</b>*/}
-                        {/*    <form name="upload_img" encType="multipart/form-data" action="" method="POST">*/}
-                        {/*        <input type="hidden" value="bees1214" name="username" />*/}
-                        {/*        <input className="bg-blue-500 text-white rounded-full px-4 py-2 my-4" name="userfile" type="file" />*/}
-                        {/*        <br />*/}
-                        {/*        <input*/}
-                        {/*            name="upload_img"*/}
-                        {/*            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"*/}
-                        {/*            type="submit"*/}
-                        {/*            value="Качи снимка"*/}
-                        {/*        />*/}
-                        {/*    </form>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
                 <div className="w-full xl:w-2/3 xl:px-4 mt-4">
@@ -72,14 +72,14 @@ export default function User() {
                                     <span className="font-bold">Роля</span>
                                 </div>
                                 <div className="mb-2 md:w-1/4">
-                                    <span className="font-bold">{user.roles.map(role => role)}</span>
+                                    <span className="font-bold">{user?.roles.map(role => role)}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            </div>
+            </div>}
         </div>
     )
 }
