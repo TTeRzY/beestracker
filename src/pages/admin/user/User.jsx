@@ -69,10 +69,12 @@ export default function User() {
                             </div>
                             <div className="w-full flex items-center border-t">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Роля</span>
+                                    <span className="font-bold">Роли</span>
                                 </div>
                                 <div className="mb-2 md:w-1/4">
-                                    <span className="font-bold">{user?.roles.map(role => role)}</span>
+                                    <span className="font-bold">{user?.roles.map((role, index) => {
+                                        return `${index !== 0 ? ', ' : ''}${role}`
+                                    })}</span>
                                 </div>
                             </div>
                         </div>
