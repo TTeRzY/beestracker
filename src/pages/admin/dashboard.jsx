@@ -37,7 +37,7 @@ export default function Dashboard() {
               counter={1}
               title={"Настройки на профила"}
               className="flex justify-between bg-pink-500 text-white p-2 border border-b-0 border-gray-200 rounded-t-lg"
-              href={"/account"}
+              href={"/dashboard/user"}
             />
           </div>
           <Stats />

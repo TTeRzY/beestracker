@@ -28,6 +28,7 @@ import {client} from "./network/clients.js";
 import {QueryClient, QueryClientProvider} from 'react-query'
 
 import Cookies from 'js-cookie'
+import User from "./pages/admin/user/User.jsx";
 
 const queryClient = new QueryClient()
 
@@ -70,6 +71,7 @@ const router = createBrowserRouter(
                     <Route path="view/:id" element={<ViewBeeHive/>}> </Route>,
                     <Route path="edit/:id" element={<EditBeeHive/>}> </Route>,
                 </Route>
+                <Route path={"/dashboard/user"} element={<User/>}></Route>
             </Route>
         </Route>
     )

@@ -12,7 +12,7 @@ export default function Panel({ icon, counter, title, className, href }) {
         </div>
       </div>
       <div className="flex justify-between px-2 py-4 bg-white border border-t-0 border-gray-200 rounded-b-lg">
-        <span>Списък</span>
+        <span>Виж повече</span>
         <Link to={href}>
           <ArrowRightCircleIcon className="w-6 h-6" />
         </Link>
