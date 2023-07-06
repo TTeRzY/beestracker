@@ -59,7 +59,7 @@ export default function AdminLayout() {
                     <Navbar toggleMobileMenu={toggleMobileMenu} mobileMenuOpen={mobileMenuOpen} isMobile={isMobile}
                             currentUser={currentUser}/>
                     <div className="flex pt-16 overflow-hidden">
-                        <Sidebar mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu}/>
+                        <Sidebar mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} currentUser={currentUser}/>
                         <div
                             className="fixed inset-0 z-10 hidden "
                             id="sidebarBackdrop"

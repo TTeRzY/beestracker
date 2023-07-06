@@ -5,7 +5,6 @@ import FormSearchInput from "../../../components/forms/form-search-input";
 import {Link} from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import {useEffect} from "react";
-import {setBeeHives} from "../../../redux/beehives/actions.js";
 import {GET_APIARIES} from "../../../graphql/apiaries.js";
 import {setApiaries} from "../../../redux/apiaries/actions.js";
 

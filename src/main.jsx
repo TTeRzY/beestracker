@@ -29,6 +29,7 @@ import {QueryClient, QueryClientProvider} from 'react-query'
 
 import Cookies from 'js-cookie'
 import User from "./pages/admin/user/User.jsx";
+import Users from "./pages/admin/users/Users.jsx";
 
 const queryClient = new QueryClient()
 
@@ -72,6 +73,7 @@ const router = createBrowserRouter(
                     <Route path="edit/:id" element={<EditBeeHive/>}> </Route>,
                 </Route>
                 <Route path={"/dashboard/user"} element={<User/>}></Route>
+                <Route path={"/dashboard/users"} element={<Users/>}></Route>
             </Route>
         </Route>
     )

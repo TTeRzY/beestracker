@@ -1,8 +1,8 @@
-import { ArchiveBoxIcon, ChartPieIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
+import {ArchiveBoxIcon, ChartPieIcon, Squares2X2Icon, UsersIcon} from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const sideBarMenu = [
+let sideBarMenu = [
   {
     key: "dashboard",
     title: "Табло",
@@ -35,10 +35,22 @@ const sideBarMenu = [
       { key: "add-beehive", url: "/dashboard/beehives/add", title: "Добави кошер" },
     ],
   },
+  {
+    key: "users",
+    title: "Потребители",
+    icon: (
+        <UsersIcon className="w-6 h-6 text-amber-500" />
+    ),
+    url: "/dashboard/users",
+  },
 ];
 
-export default function Sidebar({ mobileMenuOpen, toggleMobileMenu }) {
+export default function Sidebar({ mobileMenuOpen, toggleMobileMenu, currentUser }) {
   let [isDropDownHidden, setIsDropDownHidden] = useState(true);
+
+  if(Object.keys(currentUser).length > 0 && !currentUser.roles.includes('ADMIN')) {
+    sideBarMenu.filter(item => item.key !== 'users')
+  }
 
   function toggleDropDown(event) {
     if(event.currentTarget.nextSibling.classList.contains('hidden')) {
