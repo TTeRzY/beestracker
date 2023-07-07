@@ -49,6 +49,7 @@ const ProtectedRoute = (
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route errorElement={<ErrorPage />}>
+            <Route path="/" element={<Navigate to={Cookies.get('authToken') ? '/dashboard' : '/login'} />} />
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route
