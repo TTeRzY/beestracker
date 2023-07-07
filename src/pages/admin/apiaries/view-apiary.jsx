@@ -66,8 +66,8 @@ export default function ViewApiary() {
                     </div>
                 </div>
                 <div className="w-full xl:w-1/3 xl:px-4 mt-4">
-                    <div className="total-season-yield bg-white p-3 shadow-sm border-gray-200 rounded-lg">
-                        <h4 className="text-md font-bold mb-4 flex items-center align-center text-gray-500">
+                    <div className="total-season-yield bg-white p-3 shadow-sm border-gray-200 rounded-lg overflow-x-auto xl:overflow-x-hidden">
+                        <h4 className="text-sm xl:text-base font-bold mb-4 flex items-center align-center text-gray-500">
                             <ChartBarSquareIcon className={"w-5 h-5"} />
                             <span>Общ добив за целия пчелин през</span>
                         </h4>
@@ -92,8 +92,8 @@ export default function ViewApiary() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="total-season-nutrition bg-white p-3 mt-5 shadow-sm border-gray-200 rounded-lg">
-                        <h4 className="text-md font-bold mb-4 flex items-center align-center text-gray-500">
+                    <div className="total-season-nutrition bg-white p-3 mt-5 shadow-sm border-gray-200 rounded-lg overflow-x-auto xl:overflow-x-hidden">
+                        <h4 className="text-sm xl:text-base font-bold mb-4 flex items-center align-center text-gray-500">
                             <ChartBarSquareIcon className={"w-5 h-5"} />
                             <span>Подхранка за целия пчелин през сезона</span>
                         </h4>

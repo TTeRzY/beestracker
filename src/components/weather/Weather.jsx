@@ -32,9 +32,9 @@ export default function Weather({ latitude, longitude }) {
             <p className={"text-xl text-amber-500"}>{formatTimeStampToDate(dt)}</p>
             <div className={"flex items-center"}>
                 <img src={`https://openweathermap.org/img/wn/${weather && weather[0].icon}.png`} width="50" height="50" />
-                <p className={"text-xl font-bold"}>{main?.temp} °C</p>
+                <p className={"text-xl font-bold"}>{Math.ceil(main?.temp)} °C</p>
             </div>
-           <p className={"text-sm"}>Усеща се като: {main?.feels_like} °C, <span className={"capitalize"}>{weather[0].description}</span></p>
+           <p className={"text-sm"}>Усеща се като: {Math.ceil(main?.feels_like)} °C, <span className={"capitalize"}>{weather[0].description}</span></p>
         </div>
     );
 };

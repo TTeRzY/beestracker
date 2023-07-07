@@ -111,7 +111,7 @@ export default function ViewBeeHive() {
                             </div>
                         </div>
                     </div>
-                    <div className="total-season-yield bg-white p-3 shadow-sm border-gray-200 rounded-lg mt-5">
+                    <div className="total-season-yield bg-white p-3 shadow-sm border-gray-200 rounded-lg mt-5 overflow-x-auto xl:overflow-x-hidden">
                         <h4 className="text-md font-bold mb-4 flex items-center align-center text-gray-500">
                             <ChartBarSquareIcon className={"w-5 h-5"} />
                             <span className={"px-2"}>Общ добив за целия пчелин през</span>
@@ -137,7 +137,7 @@ export default function ViewBeeHive() {
                             </tbody>
                         </table>
                     </div>
-                    <div className="total-season-nutrition bg-white p-3 mt-5 shadow-sm border-gray-200 rounded-lg">
+                    <div className="total-season-nutrition bg-white p-3 mt-5 shadow-sm border-gray-200 rounded-lg overflow-x-auto xl:overflow-x-hidden">
                         <h4 className="text-md font-bold mb-4 flex items-center align-center text-gray-500">
                             <ChartBarSquareIcon className={"w-5 h-5"} />
                             <span className={"px-2"}>Подхранка за целия пчелин през сезона</span>

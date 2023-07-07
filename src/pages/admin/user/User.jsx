@@ -37,41 +37,41 @@ export default function User() {
                         <div className="flex flex-wrap mb-4 text-gray-500">
                             <div className="w-full flex items-center">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Име</span>
+                                    <span className="font-bold">Име:</span>
                                 </div>
-                                <div className="mb-2 md:w-1/4">
+                                <div className="mb-2 md:w-1/4 px-3">
                                     <span className="font-bold">{user.firstName}</span>
                                 </div>
                             </div>
                             <div className="w-full flex items-center border-t">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Фамилия</span>
+                                    <span className="font-bold">Фамилия:</span>
                                 </div>
-                                <div className="mb-2 md:w-1/4">
+                                <div className="mb-2 md:w-1/4 px-3">
                                     <span className="font-bold">{user.lastName}</span>
                                 </div>
                             </div>
                             <div className="w-full flex items-center border-t">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Имейл</span>
+                                    <span className="font-bold">Имейл:</span>
                                 </div>
-                                <div className="mb-2 md:w-1/4">
+                                <div className="mb-2 md:w-1/4 px-3">
                                     <span className="font-bold">{user.email}</span>
                                 </div>
                             </div>
                             <div className="w-full flex items-center border-t">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Адрес</span>
+                                    <span className="font-bold">Адрес:</span>
                                 </div>
-                                <div className="mb-2 md:w-1/4">
+                                <div className="mb-2 md:w-1/4 px-3">
                                     <span className="font-bold">{user.occupation}</span>
                                 </div>
                             </div>
                             <div className="w-full flex items-center border-t">
                                 <div className="mb-2 md:w-1/2 mb-2 md:mb-0">
-                                    <span className="font-bold">Роли</span>
+                                    <span className="font-bold">Роли:</span>
                                 </div>
-                                <div className="mb-2 md:w-1/4">
+                                <div className="mb-2 md:w-1/4 px-3">
                                     <span className="font-bold">{user?.roles.map((role, index) => {
                                         return `${index !== 0 ? ', ' : ''}${role}`
                                     })}</span>

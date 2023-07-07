@@ -50,7 +50,7 @@ export default function AddApiary() {
     });
     return (
         <div className="add-apiary-page px-4 pt-6 flex items-center justify-center">
-            <div className="add-apiary-form-wrapper xl:w-5/6 shadow-sm border-gray-200 rounded-lg bg-white">
+            <div className="add-apiary-form-wrapper w-full xl:w-5/6 shadow-sm border-gray-200 rounded-lg bg-white">
                 <div className="section-title bg-gray-100 text-gray-900 p-3 rounded-t-lg">
                     Добави пчелин
                 </div>
@@ -69,7 +69,7 @@ export default function AddApiary() {
                               handleBlur,
                               values,
                           }) => (
-                            <Form className="space-y-4 md:space-y-6 xl:w-5/6">
+                            <Form className="space-y-4 md:space-y-6 w-full xl:w-5/6">
                                 <FormInput
                                     value={values.apiaryId}
                                     labelClass="xl:w-1/6"

@@ -47,9 +47,11 @@ let sideBarMenu = [
 
 export default function Sidebar({ mobileMenuOpen, toggleMobileMenu, currentUser }) {
   let [isDropDownHidden, setIsDropDownHidden] = useState(true);
+  const [currentSidebarMenu, setCurrentSidebarMenu] = useState(sideBarMenu)
 
   if(Object.keys(currentUser).length > 0 && !currentUser.roles.includes('ADMIN')) {
-    sideBarMenu.filter(item => item.key !== 'users')
+    const filteredSideBarMenu = sideBarMenu.filter(item => item.key !== 'users')
+    setCurrentSidebarMenu(filteredSideBarMenu)
   }
 
   function toggleDropDown(event) {
@@ -114,7 +116,7 @@ export default function Sidebar({ mobileMenuOpen, toggleMobileMenu, currentUser 
                   </div>
                 </form>
               </li>
-              {sideBarMenu.map((item) => {
+              {currentSidebarMenu.map((item) => {
                 if (!item.submenu) {
                   return (
                     <li key={item.key}>
